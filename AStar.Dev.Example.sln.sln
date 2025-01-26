@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ADD5430F-CD80-42C7-80DA-90048E210EE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{73794993-9898-4968-AF19-C3E7450C94E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Example.ClassLib", "src\AStar.Dev.Example.ClassLib\AStar.Dev.Example.ClassLib.csproj", "{A9C19332-40FE-4E24-A890-405D46CD72A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "end-to-end", "end-to-end", "{F1C7FB9E-2F0F-41C9-822A-7320339193CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{D724595D-C6BC-4F31-9D2A-4F4707436F10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{10DD984D-6788-4E04-A89C-3270006F5C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Example.ClassLib.Tests.Unit", "test\unit\AStar.Dev.Example.ClassLib.Tests.Unit\AStar.Dev.Example.ClassLib.Tests.Unit.csproj", "{1D7D41F6-3866-4C00-A1BA-1675227FA9FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E1CEEE40-22D0-4F7B-AB2B-A308F8DE6A54}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		build-and-test.ps1 = build-and-test.ps1
+		CodeMaid.config = CodeMaid.config
+		LICENSE = LICENSE
+		nuget.ci.config = nuget.ci.config
+		nuget.config = nuget.config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9C19332-40FE-4E24-A890-405D46CD72A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C19332-40FE-4E24-A890-405D46CD72A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C19332-40FE-4E24-A890-405D46CD72A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C19332-40FE-4E24-A890-405D46CD72A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D7D41F6-3866-4C00-A1BA-1675227FA9FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D7D41F6-3866-4C00-A1BA-1675227FA9FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D7D41F6-3866-4C00-A1BA-1675227FA9FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D7D41F6-3866-4C00-A1BA-1675227FA9FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A9C19332-40FE-4E24-A890-405D46CD72A5} = {ADD5430F-CD80-42C7-80DA-90048E210EE7}
+		{F1C7FB9E-2F0F-41C9-822A-7320339193CA} = {73794993-9898-4968-AF19-C3E7450C94E4}
+		{D724595D-C6BC-4F31-9D2A-4F4707436F10} = {73794993-9898-4968-AF19-C3E7450C94E4}
+		{10DD984D-6788-4E04-A89C-3270006F5C56} = {73794993-9898-4968-AF19-C3E7450C94E4}
+		{1D7D41F6-3866-4C00-A1BA-1675227FA9FA} = {10DD984D-6788-4E04-A89C-3270006F5C56}
+	EndGlobalSection
+EndGlobal
