@@ -24,7 +24,7 @@ jobs:
           dotnet-version: '9.x'
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build 'src\uis\AStar.Dev.Web\AStar.Dev.Web.csproj' --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ./myapp
@@ -64,5 +64,5 @@ jobs:
         with:
           app-name: 'astar-dev'
           slot-name: 'Production'
-          package: './net-app'
+          package: '.'
           
