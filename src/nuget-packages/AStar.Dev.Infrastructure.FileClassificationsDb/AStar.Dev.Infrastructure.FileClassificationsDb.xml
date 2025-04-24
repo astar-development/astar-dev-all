@@ -9,14 +9,14 @@
             </summary>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Configurations.FileDetailClassificationsConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileDetailClassification})">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Configurations.FileToFileClassificationMappingConfiguration">
             <summary>
             </summary>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Configurations.FileToFileClassificationMappingConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileToFileClassificationMapping})">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Constants">
             <summary>
@@ -40,14 +40,10 @@
                 The main constructor
             </summary>
             <param name="connectionString">
-                An instance of
-                <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString"/>
-                used to define the Connection String in a strongly typed way
+                An instance of <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString" /> used to define the Connection String in a strongly typed way
             </param>
             <param name="astarDbContextOptions">
-                An instance of
-                <see cref="T:AStar.Dev.Infrastructure.Data.AStarDbContextOptions"/>
-                used to control additional settings - such as Logging
+                An instance of <see cref="T:AStar.Dev.Infrastructure.Data.AStarDbContextOptions" /> used to control additional settings - such as Logging
             </param>
         </member>
         <member name="P:AStar.Dev.Infrastructure.FileClassificationsDb.Data.FileClassificationsContext.FileClassifications">
@@ -72,22 +68,20 @@
                 The overridden OnConfiguring method
             </summary>
             <param name="optionsBuilder">
-                An instance of
-                <see cref="T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder"/>
-                used to set the configuration on
+                An instance of <see cref="T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder" /> used to set the configuration on
             </param>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Migrations.InitialCreation">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Migrations.InitialCreation.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Migrations.InitialCreation.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Migrations.InitialCreation.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileDetailClassification">
             <summary>
