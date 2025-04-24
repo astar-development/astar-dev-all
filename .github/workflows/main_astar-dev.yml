@@ -64,5 +64,5 @@ jobs:
         with:
           app-name: 'astar-dev'
           slot-name: 'Production'
-          package: './myapp'
+          package: './net-app'
           
