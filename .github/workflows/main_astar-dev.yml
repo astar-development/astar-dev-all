@@ -40,10 +40,14 @@ jobs:
       with:
         name: webapp
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-    - name: Azure Login
+    
+    - name: Login to Azure
       uses: azure/login@v2
       with:
-        creds: ${{ secrets.astar_dev_SPN }}
+        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E8497C9E217E4655814D0F7761AAE04F }}
+        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_085200BD39F041C4999EEB0851E8D6A2 }}
+        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3FEB324333C140D8A0FA99AC083AEB82 }}
+
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
       with:
