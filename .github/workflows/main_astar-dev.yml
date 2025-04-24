@@ -34,7 +34,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish ./src/uis/AStar.Dev.Web -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
 #      - name: Test
 #        run: dotnet test --no-build --verbosity normal --filter FullyQualifiedName!~AStar.Dev.Wallpaper.Scrapper
