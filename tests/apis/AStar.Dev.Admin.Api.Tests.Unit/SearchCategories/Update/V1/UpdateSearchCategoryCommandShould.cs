@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SearchCategories.Update.V1;
 
-[TestSubject(typeof(UpdateSearchCategoryCommand))]
+// [TestSubject(typeof(UpdateSearchCategoryCommand))]
 public sealed class UpdateSearchCategoryCommandShould
 {
     [Fact]

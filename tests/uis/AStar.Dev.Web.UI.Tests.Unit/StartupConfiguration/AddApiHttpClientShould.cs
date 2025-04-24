@@ -9,7 +9,7 @@ using NSubstitute;
 
 namespace AStar.Dev.Web.UI.StartupConfiguration;
 
-[TestSubject(typeof(AddApiHttpClient))]
+// [TestSubject(typeof(AddApiHttpClient))]
 public sealed class AddApiHttpClientShould
 {
     private readonly IServiceCollection services;

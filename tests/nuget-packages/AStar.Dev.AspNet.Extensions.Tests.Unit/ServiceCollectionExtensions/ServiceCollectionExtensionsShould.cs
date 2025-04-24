@@ -2,7 +2,7 @@
 
 namespace AStar.Dev.AspNet.Extensions.ServiceCollectionExtensions;
 
-[TestSubject(typeof(ServiceCollectionExtensions))]
+// [TestSubject(typeof(ServiceCollectionExtensions))]
 public sealed class ServiceCollectionExtensionsShould
 {
     [Fact]

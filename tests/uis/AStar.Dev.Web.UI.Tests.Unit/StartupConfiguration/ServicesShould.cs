@@ -12,7 +12,7 @@ using NSubstitute;
 
 namespace AStar.Dev.Web.UI.StartupConfiguration;
 
-[TestSubject(typeof(IServiceCollection))]
+// [TestSubject(typeof(IServiceCollection))]
 public sealed class ServicesShould
 {
     private readonly ConfigurationManager configurationManager;

@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SearchCategories.GetById.V1;
 
-[TestSubject(typeof(GetSearchCategoriesByIdQuery))]
+// [TestSubject(typeof(GetSearchCategoriesByIdQuery))]
 public sealed class GetSearchCategoriesByIdQueryShould
 {
     [Fact]

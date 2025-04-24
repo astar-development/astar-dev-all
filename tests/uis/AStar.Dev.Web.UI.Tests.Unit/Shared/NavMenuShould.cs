@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace AStar.Dev.Web.UI.Shared;
 
-[TestSubject(typeof(NavMenu))]
+// [TestSubject(typeof(NavMenu))]
 public sealed class NavMenuShould
 {
     [Fact]

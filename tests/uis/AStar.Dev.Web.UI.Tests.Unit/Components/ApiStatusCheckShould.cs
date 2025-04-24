@@ -7,7 +7,7 @@ using Constants = AStar.Dev.Web.Infrastructure.Constants;
 namespace AStar.Dev.Web.UI.Components;
 
 #pragma warning disable BL0005
-[TestSubject(typeof(ApiStatusCheck))]
+// [TestSubject(typeof(ApiStatusCheck))]
 public sealed class ApiStatusCheckShould
 {
     private readonly MicrosoftIdentityConsentAndConditionalAccessHandler consentHandler;

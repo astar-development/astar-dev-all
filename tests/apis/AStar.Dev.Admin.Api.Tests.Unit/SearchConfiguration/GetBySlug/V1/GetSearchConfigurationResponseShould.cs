@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SearchConfiguration.GetBySlug.V1;
 
-[TestSubject(typeof(GetSearchConfigurationBySlugResponse))]
+// [TestSubject(typeof(GetSearchConfigurationBySlugResponse))]
 public sealed class GetSearchConfigurationResponseShould
 {
     [Fact]

@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.AspNet.Minimal.Api.Extensions;
 
-[TestSubject(typeof(ApiVersion))]
+// [TestSubject(typeof(ApiVersion))]
 public sealed class ApiVersionShould
 {
     [Fact]

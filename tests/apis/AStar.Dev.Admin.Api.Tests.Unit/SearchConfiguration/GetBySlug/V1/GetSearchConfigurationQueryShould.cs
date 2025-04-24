@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SearchConfiguration.GetBySlug.V1;
 
-[TestSubject(typeof(GetSearchConfigurationBySlugQuery))]
+// [TestSubject(typeof(GetSearchConfigurationBySlugQuery))]
 public sealed class GetSearchConfigurationQueryShould
 {
     [Fact]

@@ -9,28 +9,28 @@
             </summary>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Configurations.FileAccessDetailConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AStar.Dev.Infrastructure.FilesDb.Models.FileAccessDetail})">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Configurations.FileDetailConfiguration">
             <summary>
             </summary>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Configurations.FileDetailConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail})">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Configurations.ModelToIgnoreConfiguration">
             <summary>
             </summary>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Configurations.ModelToIgnoreConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AStar.Dev.Infrastructure.FilesDb.Models.ModelToIgnore})">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Configurations.TagToIgnoreConfiguration">
             <summary>
             </summary>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Configurations.TagToIgnoreConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AStar.Dev.Infrastructure.FilesDb.Models.TagToIgnore})">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Constants">
             <summary>
@@ -42,9 +42,7 @@
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FilesContext">
             <summary>
-                The
-                <see cref="T:AStar.Dev.Infrastructure.FilesDb.Data.FilesContext"/>
-                class
+                The <see cref="T:AStar.Dev.Infrastructure.FilesDb.Data.FilesContext" /> class
             </summary>
             <remarks>
                 The list of files in the dB
@@ -60,14 +58,10 @@
                 The main constructor
             </summary>
             <param name="connectionString">
-                An instance of
-                <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString"/>
-                used to define the Connection String in a strongly typed way
+                An instance of <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString" /> used to define the Connection String in a strongly typed way
             </param>
             <param name="astarDbContextOptions">
-                An instance of
-                <see cref="T:AStar.Dev.Infrastructure.Data.AStarDbContextOptions"/>
-                used to control additional settings - such as Logging
+                An instance of <see cref="T:AStar.Dev.Infrastructure.Data.AStarDbContextOptions" /> used to control additional settings - such as Logging
             </param>
         </member>
         <member name="P:AStar.Dev.Infrastructure.FilesDb.Data.FilesContext.Files">
@@ -102,9 +96,7 @@
                 The overridden OnConfiguring method
             </summary>
             <param name="optionsBuilder">
-                An instance of
-                <see cref="T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder"/>
-                used to set the configuration on
+                An instance of <see cref="T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder" /> used to set the configuration on
             </param>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FilesContextExtensions">
@@ -191,52 +183,52 @@
             </returns>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.RefactorDatabase">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.RefactorDatabase.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.RefactorDatabase.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.RefactorDatabase.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.AddIsImageToDatabase">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddIsImageToDatabase.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddIsImageToDatabase.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddIsImageToDatabase.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.AddIsImageToDatabase2">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddIsImageToDatabase2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddIsImageToDatabase2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddIsImageToDatabase2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.RemoveClassificationTables">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.RemoveClassificationTables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.RemoveClassificationTables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.RemoveClassificationTables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Models.FileAccessDetail">
             <summary>
@@ -376,9 +368,7 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileSize.Create(System.Int64,System.Int64,System.Int64)">
             <summary>
-                The Create method will return a populated instance of the
-                <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize"/>
-                class
+                The Create method will return a populated instance of the <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize" /> class
             </summary>
             <param name="fileLength">
                 The length of the file
@@ -390,7 +380,7 @@
                 The width of the file if an image
             </param>
             <returns>
-                A populated instance of<see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize"/>.
+                A populated instance of <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize" />.
             </returns>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileSize.ToString">
@@ -412,18 +402,13 @@
                 Height, Width and Length - making this more of an ImageComparer...
             </summary>
             <param name="leftFileSize">
-                An instance of the
-                <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize"/>
-                class to compare
+                An instance of the <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize" /> class to compare
             </param>
             <param name="rightFileSize">
-                The other instance of the
-                <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize"/>
-                class to compare
+                The other instance of the <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize" /> class to compare
             </param>
             <returns>
-                <c>true</c>
-                if the files are deemed to be the same size, <c>false</c> otherwise
+                <c>true</c> if the files are deemed to be the same size, <c>false</c> otherwise
             </returns>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileSizeEqualityComparer.GetHashCode(AStar.Dev.Infrastructure.FilesDb.Models.FileSize)">
@@ -432,9 +417,7 @@
                 method
             </summary>
             <param name="fileSize">
-                The
-                <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize"/>
-                to calculate the appropriate hash-code for
+                The <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize" /> to calculate the appropriate hash-code for
             </param>
             <returns>
                 The hash-code, combined from the relevant properties own hash-codes

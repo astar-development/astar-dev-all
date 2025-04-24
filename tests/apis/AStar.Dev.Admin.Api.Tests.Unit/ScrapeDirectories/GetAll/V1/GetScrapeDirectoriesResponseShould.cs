@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.ScrapeDirectories.GetAll.V1;
 
-[TestSubject(typeof(GetAllScrapeDirectoriesQueryResponse))]
+// [TestSubject(typeof(GetAllScrapeDirectoriesQueryResponse))]
 public sealed class GetScrapeDirectoriesResponseShould
 {
     [Fact]

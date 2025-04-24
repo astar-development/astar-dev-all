@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace AStar.Dev.AspNet.Extensions.ConfigurationManagerExtensions;
 
-[TestSubject(typeof(ConfigurationManagerExtensions))]
+// [TestSubject(typeof(ConfigurationManagerExtensions))]
 public sealed class ConfigurationManagerExtensionsShould
 {
     [Fact]

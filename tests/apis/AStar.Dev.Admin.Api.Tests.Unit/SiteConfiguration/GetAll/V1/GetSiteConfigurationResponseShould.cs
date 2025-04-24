@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SiteConfiguration.GetAll.V1;
 
-[TestSubject(typeof(GetAllSiteConfigurationsResponse))]
+// [TestSubject(typeof(GetAllSiteConfigurationsResponse))]
 public sealed class GetSiteConfigurationResponseShould
 {
     [Fact]

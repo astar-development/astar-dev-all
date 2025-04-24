@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SiteConfiguration.Update.V1;
 
-[TestSubject(typeof(UpdateSiteConfigurationCommand))]
+// [TestSubject(typeof(UpdateSiteConfigurationCommand))]
 public sealed class UpdateSiteConfigurationCommandTest
 {
     [Fact]

@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SiteConfiguration;
 
-[TestSubject(typeof(SiteConfigurationExtensions))]
+// [TestSubject(typeof(SiteConfigurationExtensions))]
 public sealed class SiteConfigurationExtensionsTest
 {
     [Fact]

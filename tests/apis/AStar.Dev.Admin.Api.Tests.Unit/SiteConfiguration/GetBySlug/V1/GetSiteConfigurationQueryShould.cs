@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SiteConfiguration.GetBySlug.V1;
 
-[TestSubject(typeof(GetSiteConfigurationBySlugQuery))]
+// [TestSubject(typeof(GetSiteConfigurationBySlugQuery))]
 public sealed class GetSiteConfigurationBySlugQueryTest
 {
     [Fact]

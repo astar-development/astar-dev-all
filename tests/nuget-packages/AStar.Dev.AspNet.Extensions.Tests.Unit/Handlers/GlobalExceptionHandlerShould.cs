@@ -2,7 +2,7 @@
 
 namespace AStar.Dev.AspNet.Extensions.Handlers;
 
-[TestSubject(typeof(GlobalExceptionHandler))]
+// [TestSubject(typeof(GlobalExceptionHandler))]
 public sealed class GlobalExceptionHandlerShould
 {
     [Fact]

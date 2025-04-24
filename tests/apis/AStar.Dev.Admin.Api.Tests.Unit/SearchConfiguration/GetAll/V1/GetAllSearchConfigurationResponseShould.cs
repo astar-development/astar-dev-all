@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SearchConfiguration.GetAll.V1;
 
-[TestSubject(typeof(GetAllSearchConfigurationsResponse))]
+// [TestSubject(typeof(GetAllSearchConfigurationsResponse))]
 public sealed class GetAllSearchConfigurationResponseShould
 {
     [Fact]

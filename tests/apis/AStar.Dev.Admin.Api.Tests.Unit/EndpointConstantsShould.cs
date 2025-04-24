@@ -2,7 +2,7 @@
 
 namespace AStar.Dev.Admin.Api;
 
-[TestSubject(typeof(EndpointConstants))]
+// [TestSubject(typeof(EndpointConstants))]
 public sealed class EndpointConstantsShould
 {
     [Fact]

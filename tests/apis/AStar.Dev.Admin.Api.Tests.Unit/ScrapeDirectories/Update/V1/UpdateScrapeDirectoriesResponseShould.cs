@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.ScrapeDirectories.Update.V1;
 
-[TestSubject(typeof(UpdateScrapeDirectoriesResponse))]
+// [TestSubject(typeof(UpdateScrapeDirectoriesResponse))]
 public sealed class UpdateScrapeDirectoriesResponseShould
 {
     [Fact]

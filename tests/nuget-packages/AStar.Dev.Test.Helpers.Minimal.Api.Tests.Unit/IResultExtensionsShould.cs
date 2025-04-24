@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Test.Helpers.Minimal.Api;
 
-[TestSubject(typeof(ResultExtensions))]
+// [TestSubject(typeof(ResultExtensions))]
 
 // ReSharper disable once InconsistentNaming
 public sealed class IResultExtensionsShould

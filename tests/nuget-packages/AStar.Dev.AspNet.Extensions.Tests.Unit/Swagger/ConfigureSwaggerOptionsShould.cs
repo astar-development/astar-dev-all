@@ -2,7 +2,7 @@
 
 namespace AStar.Dev.AspNet.Extensions.Swagger;
 
-[TestSubject(typeof(ConfigureSwaggerOptions))]
+// [TestSubject(typeof(ConfigureSwaggerOptions))]
 public sealed class ConfigureSwaggerOptionsShould
 {
     [Fact]

@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 
 namespace AStar.Dev.Admin.Api.SiteConfiguration.GetAll.V1;
 
-[TestSubject(typeof(GetAllSiteConfigurationsQuery))]
+// [TestSubject(typeof(GetAllSiteConfigurationsQuery))]
 public sealed class GetAllSiteConfigurationsQueryTest
 {
     [Fact]

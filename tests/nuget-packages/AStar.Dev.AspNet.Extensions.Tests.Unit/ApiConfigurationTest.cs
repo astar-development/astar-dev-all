@@ -3,7 +3,7 @@ using Microsoft.OpenApi.Models;
 
 namespace AStar.Dev.AspNet.Extensions;
 
-[TestSubject(typeof(ApiConfiguration))]
+// [TestSubject(typeof(ApiConfiguration))]
 public sealed class ApiConfigurationTest
 {
     [Fact]
