@@ -1,7 +1,0 @@
-﻿{
-  "order": 0,
-  "categoryName": "",
-  "lastKnownImageCount": 0,
-  "lastPageVisited": 0,
-  "totalPages": 0
-}

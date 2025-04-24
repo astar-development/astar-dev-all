@@ -1,5 +1,0 @@
-﻿{
-  "fileSize": -1,
-  "fileSizeForDisplay": "-0.00 Kb",
-  "files": []
-}
