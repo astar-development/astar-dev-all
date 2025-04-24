@@ -1,6 +1,6 @@
 using System.Net;
 using System.Security.Cryptography;
-using AStar.Dev.Api.Client.Sdk.Shared;
+using AStar.Dev.Web.Fakes;
 using Microsoft.Extensions.Options;
 using Microsoft.Identity.Web;
 using Polly;
@@ -27,8 +27,7 @@ public static class AddApiHttpClient
                                                                    options => options.Scopes = "api://2ca26585-5929-4aae-86a7-a00c3fc2d061/user.read")
                     .ConfigureHttpClient((serviceProvider, client) =>
                                          {
-                                             client.BaseAddress = serviceProvider.GetRequiredService<IOptions<TApiConfiguration>>().Value
-                                                                                 .BaseUrl;
+                                             client.BaseAddress = new Uri("");// serviceProvider.GetRequiredService<IOptions<TApiConfiguration>>().Value.BaseUrl;
 
                                              client.DefaultRequestHeaders.Accept.Add(new("application/json"));
                                          })

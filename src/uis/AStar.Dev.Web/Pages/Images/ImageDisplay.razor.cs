@@ -1,5 +1,4 @@
-using AStar.Dev.Images.Api.Client.SDK.ImagesApi;
-using AStar.Dev.Logging.Extensions;
+using AStar.Dev.Web.Fakes;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;

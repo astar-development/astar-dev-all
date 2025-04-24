@@ -26,6 +26,7 @@
         <PackageReference Include="Microsoft.Identity.Web" Version="3.8.3" />
         <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.8.3" />
         <PackageReference Include="Microsoft.Identity.Web.UI" Version="3.8.3" />
+        <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
         <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.0.14" />
         <PackageReference Include="Testably.Abstractions.FileSystem.Interface" Version="9.0.0" />
     </ItemGroup>
@@ -159,16 +160,6 @@
 
     <ItemGroup>
         <None Include="wwwroot\assets\404.jpg" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\nuget-packages\AStar.Dev.Admin.Api.Client.Sdk\AStar.Dev.Admin.Api.Client.Sdk.csproj" />
-      <ProjectReference Include="..\..\nuget-packages\AStar.Dev.Api.HealthChecks\AStar.Dev.Api.HealthChecks.csproj" />
-      <ProjectReference Include="..\..\nuget-packages\AStar.Dev.Files.Api.Client.SDK\AStar.Dev.Files.Api.Client.SDK.csproj" />
-      <ProjectReference Include="..\..\nuget-packages\AStar.Dev.Images.Api.Client.SDK\AStar.Dev.Images.Api.Client.SDK.csproj" />
-      <ProjectReference Include="..\..\nuget-packages\AStar.Dev.Logging.Extensions\AStar.Dev.Logging.Extensions.csproj" />
-      <ProjectReference Include="..\..\nuget-packages\AStar.Dev.Usage.Api.Client.SDK\AStar.Dev.Usage.Api.Client.SDK.csproj" />
-      <ProjectReference Include="..\..\nuget-packages\AStar.Dev.Utilities\AStar.Dev.Utilities.csproj" />
     </ItemGroup>
 
 </Project>

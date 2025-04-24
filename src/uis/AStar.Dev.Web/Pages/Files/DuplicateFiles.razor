@@ -1,6 +1,6 @@
 ﻿@page "/duplicate-files"
-@using AStar.Dev.Files.Api.Client.SDK.Models
 @using AStar.Dev.Web.Components
+@using AStar.Dev.Web.Fakes
 
 @attribute [Authorize]
 <PageTitle>AStar Dev: Duplicate Files</PageTitle>
@@ -87,7 +87,9 @@
                                                         @bind-Checked="@SearchFilesServiceData.RecursiveSearch">
                                                     Recursive Search?
                                                 </Switch>
-                                                <Switch TValue="bool" @bind-Checked="@excludeViewed">
+                                                <Switch TValue="bool"
+                                                        @* @bind-Checked="@excludeViewed" *@
+                                                        >
                                                     Exclude Viewed within 7 Days?
                                                 </Switch>
                                             </FieldBody>

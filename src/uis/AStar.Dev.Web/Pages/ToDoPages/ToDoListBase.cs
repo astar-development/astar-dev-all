@@ -1,5 +1,5 @@
 ﻿using System.Security.Claims;
-using AStar.Dev.Logging.Extensions;
+using AStar.Dev.Web.Fakes;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.Identity.Abstractions;

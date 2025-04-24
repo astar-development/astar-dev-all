@@ -1,4 +1,4 @@
-﻿using AStar.Dev.Images.Api.Client.SDK.ImagesApi;
+﻿//using AStar.Dev.Images.Api.Client.SDK.ImagesApi;
 using Microsoft.AspNetCore.Components;
 
 namespace AStar.Dev.Web.Components;
@@ -16,14 +16,16 @@ public partial class ImageComponent : ComponentBase
     [Parameter]
     public int ImageSize { get; set; } = 150;
 
-    [Inject]
-    public required ImagesApiClient ImagesApiClient { get; set; }
+    // [Inject]
+    // public required ImagesApiClient ImagesApiClient { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        Stream image = await ImagesApiClient.GetImageAsync(ImageFullName, ImageSize, true);
+        await Task.CompletedTask;
 
-        imageSource = await PopulateImageFromStream(image);
+        // Stream image = await ImagesApiClient.GetImageAsync(ImageFullName, ImageSize, true);
+        //
+        // imageSource = await PopulateImageFromStream(image);
     }
 
     private async Task<string> PopulateImageFromStream(Stream stream)

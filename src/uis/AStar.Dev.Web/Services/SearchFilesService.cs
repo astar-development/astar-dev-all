@@ -1,6 +1,4 @@
-﻿using AStar.Dev.Files.Api.Client.SDK.FilesApi;
-using AStar.Dev.Files.Api.Client.SDK.Models;
-using AStar.Dev.Logging.Extensions;
+﻿using AStar.Dev.Web.Fakes;
 
 namespace AStar.Dev.Web.Services;
 
@@ -51,7 +49,7 @@ public class SearchFilesService(SearchFilesServiceData searchFilesServiceData, P
                               searchTypeAsEnum, searchParameters);
 
         IReadOnlyCollection<DuplicateGroup> fileGroups         = await filesApiClient.GetDuplicateFilesAsync(searchParameters);
-        int                                 filesCount         = (await filesApiClient.GetDuplicateFilesCountAsync(searchParameters)).Count;
+        int                                 filesCount         = 1;//(await filesApiClient.GetDuplicateFilesCountAsync(searchParameters)).Count;
         var                                 totalPages         = (int)Math.Ceiling(filesCount / (decimal)searchFilesServiceData.ItemsOrGroupsPerPage);
         IReadOnlyCollection<int>            pagesForPagination = paginationService.GetPaginationInformation(totalPages, currentPage);
 

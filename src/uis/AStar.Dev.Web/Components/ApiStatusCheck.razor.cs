@@ -1,4 +1,3 @@
-using AStar.Dev.Api.HealthChecks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Identity.Web;
 using Constants = AStar.Dev.Web.Infrastructure.Constants;
@@ -36,8 +35,8 @@ public partial class ApiStatusCheck(MicrosoftIdentityConsentAndConditionalAccess
     [Parameter]
     public string ApiName { get; set; } = string.Empty;
 
-    [Parameter]
-    public required IApiClient ApiClient { get; set; }
+    // [Parameter]
+    // public required IApiClient ApiClient { get; set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
         => await UpdateStatusesAsync();
@@ -50,9 +49,9 @@ public partial class ApiStatusCheck(MicrosoftIdentityConsentAndConditionalAccess
             ImageSource     = images[ApiName];
 
             await Task.Delay(TimeSpan.FromMilliseconds(500));
-            HealthStatusResponse apiStatus = await ApiClient.GetHealthAsync(CancellationToken.None);
-            ApiHealthCheckClass = SetHealthCheckClass(apiStatus);
-            ApiHealthStatus     = apiStatus.Status;
+            //HealthStatusResponse apiStatus = await ApiClient.GetHealthAsync(CancellationToken.None);
+            //ApiHealthCheckClass = SetHealthCheckClass(apiStatus);
+            //ApiHealthStatus     = apiStatus.Status;
             await base.OnInitializedAsync();
         }
         catch (Exception ex)
@@ -61,8 +60,8 @@ public partial class ApiStatusCheck(MicrosoftIdentityConsentAndConditionalAccess
         }
     }
 
-    private static string SetHealthCheckClass(HealthStatusResponse? healthStatusResponse)
-        => healthStatusResponse?.Status == "Healthy"
-            ? HealthCheckSuccess
-            : HealthCheckFailure;
+    // private static string SetHealthCheckClass(HealthStatusResponse? healthStatusResponse)
+    //     => healthStatusResponse?.Status == "Healthy"
+    //         ? HealthCheckSuccess
+    //         : HealthCheckFailure;
 }

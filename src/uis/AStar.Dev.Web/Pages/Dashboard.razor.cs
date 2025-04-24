@@ -1,8 +1,9 @@
-﻿using AStar.Dev.Admin.Api.Client.Sdk.AdminApi;
-using AStar.Dev.Files.Api.Client.SDK.FilesApi;
-using AStar.Dev.Images.Api.Client.SDK.ImagesApi;
-using AStar.Dev.Logging.Extensions;
+﻿// using AStar.Dev.Admin.Api.Client.Sdk.AdminApi;
+// using AStar.Dev.Files.Api.Client.SDK.FilesApi;
+// using AStar.Dev.Images.Api.Client.SDK.ImagesApi;
+
 using AStar.Dev.Web.Components;
+using AStar.Dev.Web.Fakes;
 using Blazorise.LoadingIndicator;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Identity.Web;

@@ -1,16 +1,14 @@
-using AStar.Dev.Files.Api.Client.SDK.FilesApi;
-using AStar.Dev.Logging.Extensions;
 using Microsoft.AspNetCore.Components;
 
 namespace AStar.Dev.Web.Pages.Admin;
 
 public partial class AddFilesToDatabase : ComponentBase
 {
-    [Inject]
-    public required ILoggerAstar<SiteConfiguration> Logger { get; set; }
-
-    [Inject]
-    private FilesApiClient FilesApiClient { get; set; } = null!;
+    // [Inject]
+    // public required ILoggerAstar<SiteConfiguration> Logger { get; set; }
+    //
+    // [Inject]
+    // private FilesApiClient FilesApiClient { get; set; } = null!;
 
     private string?   Directory   { get; set; } = "sdsd";
     private string[]? Directories { get; set; }
@@ -18,16 +16,17 @@ public partial class AddFilesToDatabase : ComponentBase
     /// <inheritdoc />
     protected override async Task OnInitializedAsync()
     {
-        Logger.LogPageView(nameof(AddFilesToDatabase));
+       // Logger.LogPageView(nameof(AddFilesToDatabase));
 
         await base.OnInitializedAsync();
     }
 
     private async Task GetDirectories()
     {
-        IEnumerable<string> x = await FilesApiClient.GetDirectoriesAsync(Directory!, CancellationToken.None);
+        await Task.CompletedTask;
+        //IEnumerable<string> x = await FilesApiClient.GetDirectoriesAsync(Directory!, CancellationToken.None);
 
-        Directories = x.ToArray();
+        //Directories = x.ToArray();
 
         StateHasChanged();
     }

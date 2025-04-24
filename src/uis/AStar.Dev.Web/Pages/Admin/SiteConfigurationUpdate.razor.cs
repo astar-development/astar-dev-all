@@ -1,5 +1,4 @@
-using AStar.Dev.Logging.Extensions;
-using AStar.Dev.Utilities;
+using AStar.Dev.Web.Fakes;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 
@@ -46,25 +45,25 @@ public partial class SiteConfigurationUpdate : ComponentBase
             yield return "Please specify a password with at least 8 characters.";
         }
 
-        if (!passwordToCheck.ContainsAtLeastOneUppercaseLetter())
-        {
-            yield return "Please specify a password that contains at least one capital letter.";
-        }
-
-        if (!passwordToCheck.ContainsAtLeastOneLowercaseLetter())
-        {
-            yield return "Please specify a password that contains at least one lowercase letter.";
-        }
-
-        if (!passwordToCheck.ContainsAtLeastOneDigit())
-        {
-            yield return "Please specify a password that contains at least one digit.";
-        }
-
-        if (!passwordToCheck.ContainsAtLeastOneSpecialCharacter())
-        {
-            yield return "Please specify a password that contains at least one special character.";
-        }
+        // if (!passwordToCheck.ContainsAtLeastOneUppercaseLetter())
+        // {
+        //     yield return "Please specify a password that contains at least one capital letter.";
+        // }
+        //
+        // if (!passwordToCheck.ContainsAtLeastOneLowercaseLetter())
+        // {
+        //     yield return "Please specify a password that contains at least one lowercase letter.";
+        // }
+        //
+        // if (!passwordToCheck.ContainsAtLeastOneDigit())
+        // {
+        //     yield return "Please specify a password that contains at least one digit.";
+        // }
+        //
+        // if (!passwordToCheck.ContainsAtLeastOneSpecialCharacter())
+        // {
+        //     yield return "Please specify a password that contains at least one special character.";
+        // }
     }
 
     private Task HandleValidSubmit(EditContext arg)

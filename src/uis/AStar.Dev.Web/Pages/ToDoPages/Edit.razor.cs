@@ -1,4 +1,5 @@
-﻿using AStar.Dev.Logging.Extensions;
+﻿
+using AStar.Dev.Web.Fakes;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Identity.Abstractions;
 

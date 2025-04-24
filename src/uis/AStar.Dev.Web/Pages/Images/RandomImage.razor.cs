@@ -1,5 +1,5 @@
-﻿using AStar.Dev.Files.Api.Client.SDK.Models;
-using AStar.Dev.Logging.Extensions;
+﻿
+using AStar.Dev.Web.Fakes;
 using AStar.Dev.Web.Services;
 using Blazorise.LoadingIndicator;
 using Microsoft.AspNetCore.Components;
@@ -57,7 +57,7 @@ public partial class RandomImage : ComponentBase
         FileGroups                                                                                                                     = [];
 
         (IReadOnlyCollection<DuplicateGroup> fileGroups, int filesCount, int totalNumberOfPages, IReadOnlyCollection<int> paginationPages, List<int> pagesList) =
-            await SearchFilesService.GetFilesAsync(currentPageAsInt, new () { ExcludeViewed = excludeViewed, }, CancellationToken.None);
+            await SearchFilesService.GetFilesAsync(currentPageAsInt, new () { ExcludeViewed = new (), }, CancellationToken.None);
 
         FileGroups            = fileGroups;
         totalPages            = totalNumberOfPages;

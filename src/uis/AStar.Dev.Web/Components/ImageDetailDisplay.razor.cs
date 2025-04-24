@@ -1,6 +1,4 @@
-﻿using AStar.Dev.Files.Api.Client.SDK.Models;
-using AStar.Dev.Utilities;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
 namespace AStar.Dev.Web.Components;
 
@@ -8,9 +6,9 @@ public partial class ImageDetailDisplay : ComponentBase
 {
     [Parameter]
     public int ImageSize { get; set; }
-
-    [Parameter]
-    public required FileDetail FileDetail { get; set; }
+    //
+    // [Parameter]
+    // public required FileDetail FileDetail { get; set; }
 
     [Parameter]
     public required string RootDirectory { get; set; }
@@ -21,6 +19,6 @@ public partial class ImageDetailDisplay : ComponentBase
     /// <inheritdoc />
     protected override void OnAfterRender(bool firstRender)
     {
-        Logger.LogDebug("FileDetail {FileDetail}", FileDetail.ToJson());
+       // Logger.LogDebug("FileDetail {FileDetail}", FileDetail.ToJson());
     }
 }

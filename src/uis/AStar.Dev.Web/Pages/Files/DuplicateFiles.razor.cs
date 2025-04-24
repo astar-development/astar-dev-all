@@ -1,5 +1,4 @@
-﻿using AStar.Dev.Files.Api.Client.SDK.Models;
-using AStar.Dev.Logging.Extensions;
+﻿using AStar.Dev.Web.Fakes;
 using AStar.Dev.Web.Services;
 using Blazorise.LoadingIndicator;
 using Microsoft.AspNetCore.Components;
@@ -15,7 +14,7 @@ public partial class DuplicateFiles : ComponentBase
     private       bool                     atleastOneSearchHasBeenPerformed;
     private       string                   currentPage        = "1";
     private       int                      currentPageAsInt   = 1;
-    private       bool                     excludeViewed      = true;
+    private       ExcludeViewed                     excludeViewed      = new();
     private       LoadingIndicator         loadingIndicator   = new();
     private       IEnumerable<int>         pages              = [];
     private       IReadOnlyCollection<int> pagesForPagination = [];

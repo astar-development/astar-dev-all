@@ -7,8 +7,8 @@
                 </Paragraph>
             </th>
             <td>
-                <Paragraph
-                    TextColor="TextColor.Dark">@FileDetail.FileAccessDetail.DetailsLastUpdated?.ToString("R")</Paragraph>
+                @* <Paragraph *@
+                @*     TextColor="TextColor.Dark">@FileDetail.FileAccessDetail.DetailsLastUpdated?.ToString("R")</Paragraph> *@
             </td>
         </tr>
         <tr>
@@ -18,8 +18,8 @@
                 </Paragraph>
             </th>
             <td>
-                <Paragraph
-                    TextColor="TextColor.Dark">@FileDetail.FileAccessDetail.LastViewed?.ToString("R")</Paragraph>
+                @* <Paragraph *@
+                @*     TextColor="TextColor.Dark">@FileDetail.FileAccessDetail.LastViewed?.ToString("R")</Paragraph> *@
             </td>
         </tr>
         <tr>
@@ -29,7 +29,7 @@
                 </Paragraph>
             </th>
             <td>
-                <Paragraph TextColor="TextColor.Dark">@FileDetail.FileName</Paragraph>
+                @* <Paragraph TextColor="TextColor.Dark">@FileDetail.FileName</Paragraph> *@
             </td>
         </tr>
         <tr>
@@ -39,8 +39,8 @@
                 </Paragraph>
             </th>
             <td>
-                <Paragraph
-                    TextColor="TextColor.Dark">@FileDetail.DirectoryName.Replace(RootDirectory, string.Empty)</Paragraph>
+                @* <Paragraph *@
+                @*     TextColor="TextColor.Dark">@FileDetail.DirectoryName.Replace(RootDirectory, string.Empty)</Paragraph> *@
             </td>
         </tr>
         <tr>
@@ -50,7 +50,7 @@
                 </Paragraph>
             </th>
             <td>
-                <Paragraph TextColor="TextColor.Dark">@FileDetail.Width x @FileDetail.Height</Paragraph>
+                @* <Paragraph TextColor="TextColor.Dark">@FileDetail.Width x @FileDetail.Height</Paragraph> *@
             </td>
         </tr>
         <tr>
@@ -75,46 +75,46 @@
 
                     <Buttons>
                         <Buttons Margin="Margin.Is2.FromEnd">
-                            @if (FileDetail.FileAccessDetail.SoftDeletePending)
-                            {
-                                <Button Clicked="@(() => UnMarkForSoftDeleteImageAsync(FileDetail.FileAccessDetail.Id))"
-                                        Color="Color.Success">Undo Soft Delete
-                                </Button>
-                            }
-                            else
-                            {
-                                <Button Clicked="@(() => MarkForSoftDeleteImageAsync(FileDetail.FileAccessDetail.Id))"
-                                        Color="Color.Warning">Soft Delete
-                                </Button>
-                            }
+                            @* @if (FileDetail.FileAccessDetail.SoftDeletePending) *@
+                            @* { *@
+                            @*     <Button Clicked="@(() => UnMarkForSoftDeleteImageAsync(FileDetail.FileAccessDetail.Id))" *@
+                            @*             Color="Color.Success">Undo Soft Delete *@
+                            @*     </Button> *@
+                            @* } *@
+                            @* else *@
+                            @* { *@
+                            @*     <Button Clicked="@(() => MarkForSoftDeleteImageAsync(FileDetail.FileAccessDetail.Id))" *@
+                            @*             Color="Color.Warning">Soft Delete *@
+                            @*     </Button> *@
+                            @* } *@
                         </Buttons>
                         <Buttons>
-                            @if (FileDetail.FileAccessDetail.HardDeletePending)
-                            {
-                                <Button Clicked="@(() => UnMarkForHardDeleteImageAsync(FileDetail.FileAccessDetail.Id))"
-                                        Color="Color.Success">Undo Hard Delete
-                                </Button>
-                            }
-                            else
-                            {
-                                <Button Clicked="@(() => MarkForHardDeleteImageAsync(FileDetail.FileAccessDetail.Id))"
-                                        Color="Color.Danger">Hard Delete
-                                </Button>
-                            }
+                            @* @if (FileDetail.FileAccessDetail.HardDeletePending) *@
+                            @* { *@
+                            @*     <Button Clicked="@(() => UnMarkForHardDeleteImageAsync(FileDetail.FileAccessDetail.Id))" *@
+                            @*             Color="Color.Success">Undo Hard Delete *@
+                            @*     </Button> *@
+                            @* } *@
+                            @* else *@
+                            @* { *@
+                            @*     <Button Clicked="@(() => MarkForHardDeleteImageAsync(FileDetail.FileAccessDetail.Id))" *@
+                            @*             Color="Color.Danger">Hard Delete *@
+                            @*     </Button> *@
+                            @* } *@
                         </Buttons>
                         <Buttons>
-                            @if (FileDetail.FileAccessDetail.MoveRequired)
-                            {
-                                <Button Clicked="@(() => UndoMarkForMovingAsync(FileDetail.FileAccessDetail.Id))"
-                                        Color="Color.Success">Undo Move/Rename
-                                </Button>
-                            }
-                            else
-                            {
-                                <Button Clicked="@(() => MarkForMovingAsync(FileDetail.FileAccessDetail.Id))"
-                                        Color="Color.Info">Move/Rename
-                                </Button>
-                            }
+                            @* @if (FileDetail.FileAccessDetail.MoveRequired) *@
+                            @* { *@
+                            @*     <Button Clicked="@(() => UndoMarkForMovingAsync(FileDetail.FileAccessDetail.Id))" *@
+                            @*             Color="Color.Success">Undo Move/Rename *@
+                            @*     </Button> *@
+                            @* } *@
+                            @* else *@
+                            @* { *@
+                            @*     <Button Clicked="@(() => MarkForMovingAsync(FileDetail.FileAccessDetail.Id))" *@
+                            @*             Color="Color.Info">Move/Rename *@
+                            @*     </Button> *@
+                            @* } *@
                         </Buttons>
                         <Buttons>
                             <Button Color="Color.Warning" Clicked="@(() => OnButtonClicked())">Open</Button>

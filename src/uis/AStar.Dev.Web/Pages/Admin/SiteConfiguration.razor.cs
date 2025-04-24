@@ -1,7 +1,5 @@
-using AStar.Dev.Admin.Api.Client.Sdk.AdminApi;
-using AStar.Dev.Logging.Extensions;
+using AStar.Dev.Web.Fakes;
 using Microsoft.AspNetCore.Components;
-using SiteConfigurations = AStar.Dev.Admin.Api.Client.Sdk.Models.SiteConfiguration;
 
 namespace AStar.Dev.Web.Pages.Admin;
 
@@ -9,7 +7,7 @@ namespace AStar.Dev.Web.Pages.Admin;
 public partial class SiteConfiguration
 {
     private bool                            loading;
-    private IEnumerable<SiteConfigurations> siteConfigurations = new List<SiteConfigurations>();
+    private IEnumerable<Fakes.SiteConfiguration> siteConfigurations = new List<Fakes.SiteConfiguration>();
 
     [Inject]
     private AdminApiClient AdminApiClient { get; set; } = null!;
@@ -35,7 +33,7 @@ public partial class SiteConfiguration
 
         loading = true;
         StateHasChanged();
-        siteConfigurations = await AdminApiClient.GetSiteConfigurationAsync();
+        siteConfigurations = (IEnumerable<Fakes.SiteConfiguration>)await AdminApiClient.GetSiteConfigurationAsync();
         loading            = false;
         StateHasChanged();
     }
