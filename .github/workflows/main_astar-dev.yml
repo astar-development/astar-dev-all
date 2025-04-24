@@ -3,6 +3,10 @@
 
 name: Build and deploy ASP.Net Core app to Azure Web App - astar-dev
 
+env:
+  AZURE_WEBAPP_NAME: 'astar-dev'   # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+
 on:
   push:
     branches: [ "main" ]
@@ -27,14 +31,19 @@ jobs:
       - name: Delete nuget*.config files
         run: rm -f nuget*.config
 
-      - name: Restore dependencies
-        run: dotnet restore
+      - name: Set up dependency caching for faster builds
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ./src/uis/AStar.Dev.Web -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
 #      - name: Test
 #        run: dotnet test --no-build --verbosity normal --filter FullyQualifiedName!~AStar.Dev.Wallpaper.Scrapper
@@ -72,6 +81,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'astar-dev'
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: 'Production'
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          package: .
