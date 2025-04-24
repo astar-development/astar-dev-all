@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AStar.Dev.Functional.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:AStar.Dev.Functional.Extensions.EnumerableExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.EnumerableExtensions.FirstOrNone``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sequence"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AStar.Dev.Functional.Extensions.None">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Functional.Extensions.None.Value">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.None.Of``1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:AStar.Dev.Functional.Extensions.None`1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.None`1.ToString">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AStar.Dev.Functional.Extensions.Option">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.Option.Optional``1(``0)">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AStar.Dev.Functional.Extensions.OptionExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.OptionExtensions.Map``2(AStar.Dev.Functional.Extensions.Option{``0},System.Func{``0,``1})">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="obj"></param>
+            <param name="map"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.OptionExtensions.Filter``1(AStar.Dev.Functional.Extensions.Option{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.OptionExtensions.Reduce``1(AStar.Dev.Functional.Extensions.Option{``0},``0)">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="substitute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.OptionExtensions.Reduce``1(AStar.Dev.Functional.Extensions.Option{``0},System.Func{``0})">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="substitute"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AStar.Dev.Functional.Extensions.Option`1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.Option`1.op_Implicit(AStar.Dev.Functional.Extensions.None)~AStar.Dev.Functional.Extensions.Option{`0}">
+            <summary>
+            </summary>
+            <param name="_"></param>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.Option`1.op_Implicit(`0)~AStar.Dev.Functional.Extensions.Option{`0}">
+            <summary>
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:AStar.Dev.Functional.Extensions.Some`1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.Some`1.#ctor(`0)">
+            <summary>
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="P:AStar.Dev.Functional.Extensions.Some`1.Content">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Functional.Extensions.Some`1.ToString">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

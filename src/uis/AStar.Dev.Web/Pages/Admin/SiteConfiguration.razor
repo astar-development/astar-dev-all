@@ -1,0 +1,50 @@
+﻿@page "/admin/site-configuration"
+
+@attribute [Authorize]
+
+<PageTitle>AStar Dev: Site Configuration</PageTitle>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td colspan="5" style="padding-bottom: 20px">
+            <h3>Site Configurations</h3>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>Site URI</th>
+        <th>Site Slug</th>
+        <th>Email Address</th>
+        <th>Username</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (Dev.Admin.Api.Client.Sdk.Models.SiteConfiguration siteConfiguration in siteConfigurations)
+    {
+        <tr>
+            <td>
+                <label id="SiteUri">@siteConfiguration.BaseUrl</label>
+            </td>
+            <td>
+                <label id="Slug">@siteConfiguration.SiteConfigurationSlug</label>
+            </td>
+            <td>
+                <label id="LoginEmailAddress">@siteConfiguration.LoginEmailAddress</label>
+            </td>
+            <td>
+                <label id="Username">@siteConfiguration.Username</label>
+            </td>
+            <td>
+                <a href="/admin/site-configuration-update?siteConfigurationSlug=@siteConfiguration.SiteConfigurationSlug"
+                   class="btn btn-success" alt="Update Site Config">Update</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@if (loading)
+{
+    <div>Loading...please wait...</div>
+}

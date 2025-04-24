@@ -1,0 +1,262 @@
+﻿@page "/duplicate-files"
+@using AStar.Dev.Files.Api.Client.SDK.Models
+@using AStar.Dev.Web.Components
+
+@attribute [Authorize]
+<PageTitle>AStar Dev: Duplicate Files</PageTitle>
+<div id="top"></div>
+
+<h3>Duplicate Files</h3>
+
+<script src="js/backtotop.js"></script>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+
+<LoadingIndicator @ref="loadingIndicator">
+    <ChildContent>
+        <Accordion>
+            <AccordionItem @bind-Visible="@accordionItem1Visible" Background="Background.Primary">
+                <AccordionHeader Background="Background.Primary">
+                    <Heading Size="HeadingSize.Is5">
+                        <AccordionToggle>Search for Duplicate Files</AccordionToggle>
+                    </Heading>
+                </AccordionHeader>
+                <AccordionBody>
+                    <Row>
+                        <Column ColumnSize="ColumnSize.Is12.OnDesktop">
+                            <Card Margin="Margin.Is4.FromBottom">
+                                <CardBody Background="Background.Primary">
+                                    <Fields>
+                                        <Field Horizontal>
+                                            <FieldLabel ColumnSize="ColumnSize.IsFull.OnTablet.Is3.OnDesktop">
+                                                <Tooltip
+                                                    Text="This is the folder (aka directory) where you want the search to start from. As a minimum, it must be a valid UNC path - e.g.: 'c:\'."
+                                                    Multiline="true"><span>Search Folder </span><span
+                                                        class="oi oi-question-mark info" aria-hidden="true"></span>
+                                                </Tooltip>
+                                            </FieldLabel>
+                                            <FieldBody ColumnSize="ColumnSize.IsFull.OnTablet.Is9.OnDesktop">
+                                                <TextEdit Placeholder="Please specify the starting folder"
+                                                          @bind-text="@SearchFilesServiceData.StartingFolder"
+                                                          id="startingFolder"/>
+                                            </FieldBody>
+                                        </Field>
+                                        <Field Horizontal>
+                                            <FieldLabel ColumnSize="ColumnSize.IsFull.OnTablet.Is3.OnDesktop">
+                                                Groups Per Page
+                                            </FieldLabel>
+                                            <FieldBody ColumnSize="ColumnSize.IsFull.OnTablet.Is9.OnDesktop">
+                                                <NumericPicker
+                                                    @bind-Value="@SearchFilesServiceData.ItemsOrGroupsPerPage"
+                                                    ModifyValueOnWheel
+                                                    WheelOn="NumericWheelOn.Hover" Step="5" Min="5" Max="50"
+                                                    id="itemsPerPage"/>
+                                            </FieldBody>
+                                        </Field>
+                                    </Fields>
+                                    <Fields>
+                                        <Field Horizontal>
+                                            <FieldLabel ColumnSize="ColumnSize.IsFull.OnTablet.Is3.OnDesktop">
+                                                Search Type
+                                            </FieldLabel>
+                                            <FieldBody ColumnSize="ColumnSize.IsFull.OnTablet.Is9.OnDesktop">
+                                                <Select @bind-SelectedValue="@SearchFilesServiceData.SearchType"
+                                                        id="searchType" Disabled>
+                                                    <SelectItem Value="2">Duplicate Files</SelectItem>
+                                                </Select>
+                                            </FieldBody>
+                                        </Field>
+                                        <Field Horizontal>
+                                            <FieldLabel ColumnSize="ColumnSize.IsFull.OnTablet.Is3.OnDesktop">
+                                                Sort Order
+                                            </FieldLabel>
+                                            <FieldBody ColumnSize="ColumnSize.IsFull.OnTablet.Is9.OnDesktop">
+                                                <Select @bind-SelectedValue="@SearchFilesServiceData.SortOrder"
+                                                        id="sortOrder">
+                                                    <SelectItem Value="0">Size Descending</SelectItem>
+                                                    <SelectItem Value="1">Size Ascending</SelectItem>
+                                                    <SelectItem Value="2">FileClassification Descending</SelectItem>
+                                                    <SelectItem Value="3">FileClassification Ascending</SelectItem>
+                                                </Select>
+                                            </FieldBody>
+                                        </Field>
+                                    </Fields>
+                                    <Fields>
+                                        <Field Horizontal JustifyContent="JustifyContent.End">
+                                            <FieldBody ColumnSize="ColumnSize.Is9.Is3.WithOffset">
+                                                <Switch TValue="bool"
+                                                        @bind-Checked="@SearchFilesServiceData.RecursiveSearch">
+                                                    Recursive Search?
+                                                </Switch>
+                                                <Switch TValue="bool" @bind-Checked="@excludeViewed">
+                                                    Exclude Viewed within 7 Days?
+                                                </Switch>
+                                            </FieldBody>
+                                        </Field>
+                                        <Field Horizontal JustifyContent="JustifyContent.End">
+                                            <FieldBody ColumnSize="ColumnSize.Is9.Is3.WithOffset">
+                                                <Button Color="Color.Success" Clicked="StartSearch"
+                                                        id="startSearch">
+                                                    Start Search
+                                                </Button>
+                                            </FieldBody>
+                                        </Field>
+                                    </Fields>
+                                </CardBody>
+                            </Card>
+                        </Column>
+                    </Row>
+                </AccordionBody>
+            </AccordionItem>
+            @if (searchHasNoResults)
+            {
+                <div class="btn btn-warning">
+                    No results found, please review your criteria and try again
+                </div>
+            }
+            @if (searchHasResults)
+            {
+                <AccordionItem @bind-Visible="@accordionItem3Visible" Background="Background.Primary">
+                    <AccordionHeader>
+                        <Heading Size="HeadingSize.Is5">
+                            <AccordionToggle>Search Results</AccordionToggle>
+                        </Heading>
+                    </AccordionHeader>
+                    <AccordionBody>
+                        <Row>
+                            <Column ColumnSize="ColumnSize.Is10">
+                                <Pagination Background="Background.Primary">
+                                    <PaginationItem Disabled="@IsPageNavigationDisabled(Previous)"
+                                                    @onclick="PreviousPage">
+                                        <PaginationLink Background="Background.Warning">
+                                        </PaginationLink>
+                                    </PaginationItem>
+                                    @{
+                                        foreach (int pageOrdinal in pagesForPagination)
+                                        {
+                                            var pageNumberAsString = pageOrdinal.ToString();
+
+                                            <PaginationItem @key="pageNumberAsString"
+                                                            Active="@IsActivePage(pageNumberAsString)">
+                                                <PaginationLink Page="@pageNumberAsString" Clicked="SetActivePage"
+                                                                Background="Background.Warning">
+                                                    @pageNumberAsString
+                                                </PaginationLink>
+                                            </PaginationItem>
+                                        }
+                                    }
+                                    <PaginationItem Disabled="@IsPageNavigationDisabled(Next)" @onclick="NextPage">
+                                        <PaginationLink Background="Background.Warning">
+                                            <span aria-hidden="true">Next »</span>
+                                        </PaginationLink>
+                                    </PaginationItem>
+                                </Pagination>
+                            </Column>
+                            <Column ColumnSize="ColumnSize.Is2">
+                                <Select TValue="int" SelectedValue="@currentPageAsInt"
+                                        SelectedValueChanged="@OnSelectedValueChanged">
+                                    @{
+                                        foreach (int pageNumber in pages)
+                                        {
+                                            <SelectItem Selected="@(pageNumber == currentPageAsInt)"
+                                                        Value="@pageNumber.ToString()">
+                                                Page @pageNumber.ToString()</SelectItem>
+                                        }
+                                    }
+                                </Select>
+                            </Column>
+                        </Row>
+                        <Row>
+                            @if (FileGroups is not null)
+                            {
+                                @foreach (DuplicateGroup fileGroup in FileGroups)
+                                {
+                                    var imageDivClass = "imageDiv";
+                                    <table>
+                                        <thead>
+                                        <th>
+                                            <h2><br/>@fileGroup.Files.Count() Duplicate Files in
+                                                Group<br/>Size: @fileGroup.FileSizeForDisplay,
+                                                Width: @fileGroup.Files.First().Width,
+                                                Height: @fileGroup.Files.First().Height</h2>
+                                        </th>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                @foreach (FileDetail file in fileGroup.Files)
+                                                {
+                                                    <div class="@imageDivClass">
+                                                        <h4>@file.FileName</h4>
+                                                        <br/>
+                                                        <ImageDetailDisplay FileDetail="@file" ImageSize="850"
+                                                                            RootDirectory="@SearchFilesServiceData.StartingFolder"></ImageDetailDisplay>
+                                                    </div>
+
+                                                    imageDivClass = "imageDiv2";
+                                                }
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <hr style="color: white">
+                                }
+                            }
+                        </Row>
+                        <Row>
+                            <Column ColumnSize="ColumnSize.Is10">
+                                <Pagination Background="Background.Primary">
+                                    <PaginationItem Disabled="@IsPageNavigationDisabled(Previous)"
+                                                    @onclick="PreviousPage">
+                                        <PaginationLink Background="Background.Warning">
+                                            <span aria-hidden="true">« Previous</span>
+                                        </PaginationLink>
+                                    </PaginationItem>
+                                    @{
+                                        foreach (int pageOrdinal in pagesForPagination)
+                                        {
+                                            var pageNumberAsString = pageOrdinal.ToString();
+
+                                            <PaginationItem @key="pageNumberAsString"
+                                                            Active="@IsActivePage(pageNumberAsString)">
+                                                <PaginationLink Page="@pageNumberAsString" Clicked="SetActivePage"
+                                                                Background="Background.Warning">
+                                                    @pageNumberAsString
+                                                </PaginationLink>
+                                            </PaginationItem>
+                                        }
+                                    }
+                                    <PaginationItem Disabled="@IsPageNavigationDisabled(Next)" @onclick="NextPage">
+                                        <PaginationLink Background="Background.Warning">
+                                            <span aria-hidden="true">Next »</span>
+                                        </PaginationLink>
+                                    </PaginationItem>
+                                </Pagination>
+                            </Column>
+                            <Column ColumnSize="ColumnSize.Is2">
+                                <Select TValue="int" SelectedValue="@currentPageAsInt"
+                                        SelectedValueChanged="@OnSelectedValueChanged">
+                                    @{
+                                        foreach (int pageNumber in pages)
+                                        {
+                                            <SelectItem Selected="@(pageNumber == currentPageAsInt)"
+                                                        Value="@pageNumber.ToString()">
+                                                Page @pageNumber.ToString()</SelectItem>
+                                        }
+                                    }
+                                </Select>
+                            </Column>
+                        </Row>
+                    </AccordionBody>
+                </AccordionItem>
+            }
+        </Accordion>
+    </ChildContent>
+    <IndicatorTemplate>
+        <Animate Animation="Animations.FadeDownRight">
+            <Div>
+                <SpinKit Type="SpinKitType.Wave" Size="100px"/>
+            </Div>
+        </Animate>
+    </IndicatorTemplate>
+</LoadingIndicator>
