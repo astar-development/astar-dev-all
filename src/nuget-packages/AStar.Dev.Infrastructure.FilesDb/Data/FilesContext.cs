@@ -106,10 +106,10 @@ public sealed class FilesContext : DbContext
         }
     }
 
-    private static ILoggerFactory CreateEmptyLoggerFactory() =>
-        LoggerFactory.Create(builder => builder.AddFilter((_, _) => false));
+    private static ILoggerFactory CreateEmptyLoggerFactory()
+        => LoggerFactory.Create(builder => builder.AddFilter((_, _) => false));
 
-    private static ILoggerFactory CreateLoggerFactory() =>
-        LoggerFactory.Create(static builder => builder
+    private static ILoggerFactory CreateLoggerFactory()
+        => LoggerFactory.Create(static builder => builder
                                 .AddFilter((category, level) => category == Command.Name && level == LogLevel.Information));
 }

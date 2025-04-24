@@ -24,6 +24,6 @@ public sealed class TagToIgnore
     /// <returns>
     ///     This object serialized as a JSON object.
     /// </returns>
-    public override string ToString() =>
-        this.ToJson();
+    public override string ToString()
+        => this.ToJson();
 }

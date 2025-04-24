@@ -12,15 +12,15 @@ public sealed class ApiUsageContext : DbContext
 
     /// <summary>
     /// </summary>
-    public ApiUsageContext() =>
-        connectionString = string.Empty;
+    public ApiUsageContext()
+        => connectionString = string.Empty;
 
     /// <summary>
     /// </summary>
     /// <param name="connectionString"></param>
     public ApiUsageContext(ConnectionString connectionString)
-        : this() =>
-        this.connectionString = connectionString;
+        : this()
+        => this.connectionString = connectionString;
 
     /// <summary>
     /// </summary>
@@ -39,6 +39,6 @@ public sealed class ApiUsageContext : DbContext
     }
 
     /// <inheritdoc />
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-        _ = optionsBuilder.UseSqlServer(connectionString.Value);
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => _ = optionsBuilder.UseSqlServer(connectionString.Value);
 }

@@ -20,6 +20,6 @@ public static class GuardAgainst
     /// <exception cref="ArgumentNullException">
     ///     Thrown when the object is, in fact, null.
     /// </exception>
-    public static T Null<T>(T @object) =>
-        @object is null ? throw new ArgumentNullException(nameof(@object)) : @object;
+    public static T Null<T>(T @object)
+        => @object is null ? throw new ArgumentNullException(nameof(@object)) : @object;
 }

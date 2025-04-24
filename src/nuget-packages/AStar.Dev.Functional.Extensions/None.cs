@@ -12,6 +12,6 @@ public sealed class None
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
-    public static None<T> Of<T>() =>
-        new();
+    public static None<T> Of<T>()
+        => new();
 }

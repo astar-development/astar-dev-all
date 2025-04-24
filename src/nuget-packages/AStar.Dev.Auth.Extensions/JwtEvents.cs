@@ -15,8 +15,8 @@ public sealed class JwtEvents(ILogger<JwtEvents> logger)
     /// <param name="send"></param>
     /// <param name="applicationName"></param>
     /// <returns></returns>
-    public JwtBearerEvents AddJwtEvents(Send send, string applicationName) =>
-        new()
+    public JwtBearerEvents AddJwtEvents(Send send, string applicationName)
+        => new()
         {
             OnAuthenticationFailed = async context => await LogAuthenticationFailureAsync(send, applicationName, context),
             OnForbidden            = async context => await LogAuthorisationFailedAsync(send, applicationName, context),

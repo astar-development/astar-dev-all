@@ -20,8 +20,8 @@ public static class EnumerableExtensions
     /// </returns>
     public static IEnumerable<FileDetail> FilterImagesIfApplicable(this IEnumerable<FileDetail> files,
                                                                    string                       searchType,
-                                                                   CancellationToken            cancellationToken) =>
-        cancellationToken.IsCancellationRequested
+                                                                   CancellationToken            cancellationToken)
+        => cancellationToken.IsCancellationRequested
             ? files
             : FilterImagesIfApplicable(files, searchType);
 
@@ -33,8 +33,8 @@ public static class EnumerableExtensions
     /// </param>
     /// <returns>
     /// </returns>
-    public static IEnumerable<FileDetail> OrderFiles(this IEnumerable<FileDetail> files, SortOrder sortOrder) =>
-        sortOrder switch
+    public static IEnumerable<FileDetail> OrderFiles(this IEnumerable<FileDetail> files, SortOrder sortOrder)
+        => sortOrder switch
         {
             SortOrder.NameAscending  => files.OrderBy(f => f.FileName),
             SortOrder.NameDescending => files.OrderByDescending(f => f.FileName),
@@ -76,13 +76,13 @@ public static class EnumerableExtensions
     /// </param>
     /// <returns>
     /// </returns>
-    public static IEnumerable<IGrouping<FileSize, FileDetail>> GetDuplicates(this IEnumerable<FileDetail> files) =>
-        files
+    public static IEnumerable<IGrouping<FileSize, FileDetail>> GetDuplicates(this IEnumerable<FileDetail> files)
+        => files
            .GroupBy(file => FileSize.Create(file.FileSize, file.Height, file.Width),
                     new FileSizeEqualityComparer()).Where(files => files.Count() > 1);
 
-    private static IEnumerable<FileDetail> FilterImagesIfApplicable(IEnumerable<FileDetail> files, string searchType) =>
-        searchType != "Images"
+    private static IEnumerable<FileDetail> FilterImagesIfApplicable(IEnumerable<FileDetail> files, string searchType)
+        => searchType != "Images"
             ? files
             : files.Where(file => file.FileName.EndsWith("jpg")
                                   || file.FileName.EndsWith("jpeg")

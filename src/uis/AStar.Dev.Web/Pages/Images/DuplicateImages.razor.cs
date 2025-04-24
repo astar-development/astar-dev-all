@@ -46,8 +46,8 @@ public partial class DuplicateImages : ComponentBase
         await base.OnInitializedAsync();
     }
 
-    private async Task StartSearch() =>
-        await SearchForMatchingFiles();
+    private async Task StartSearch()
+        => await SearchForMatchingFiles();
 
     private async Task SearchForMatchingFiles()
     {
@@ -83,11 +83,11 @@ public partial class DuplicateImages : ComponentBase
         await SetActivePage(currentPage);
     }
 
-    private bool IsActivePage(string page) =>
-        currentPage == page;
+    private bool IsActivePage(string page)
+        => currentPage == page;
 
-    private bool IsPageNavigationDisabled(string navigation) =>
-        navigation.Equals(Previous)
+    private bool IsPageNavigationDisabled(string navigation)
+        => navigation.Equals(Previous)
             ? currentPage.Equals("1")
             : navigation.Equals(Next) && currentPage.Equals(SearchFilesServiceData.ItemsOrGroupsPerPage.ToString());
 

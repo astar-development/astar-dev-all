@@ -22,6 +22,6 @@ public sealed class ExcludedViewSettings
     ///     Returns this object in JSON format
     /// </summary>
     /// <returns>This object serialized as a JSON object</returns>
-    public override string ToString() =>
-        this.ToJson();
+    public override string ToString()
+        => this.ToJson();
 }

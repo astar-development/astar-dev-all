@@ -25,8 +25,8 @@ public sealed class FileDimensionsWithSize
     /// <summary>
     ///     Gets the file size, but converted to Mb/Kb for display
     /// </summary>
-    public string FileSizeForDisplay =>
-        FileLength / 1024 / 1024 > 0
+    public string FileSizeForDisplay
+        => FileLength / 1024 / 1024 > 0
             ? (FileLength / 1024D / 1024D).ToString("N2") + " Mb"
             : (FileLength / 1024D).ToString("N2")         + " Kb";
 
@@ -34,6 +34,6 @@ public sealed class FileDimensionsWithSize
     ///     Returns this object in JSON format
     /// </summary>
     /// <returns>This object serialized as a JSON object</returns>
-    public override string ToString() =>
-        this.ToJson();
+    public override string ToString()
+        => this.ToJson();
 }

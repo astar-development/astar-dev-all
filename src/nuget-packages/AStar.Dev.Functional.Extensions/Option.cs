@@ -9,6 +9,6 @@ public static class Option
     /// <typeparam name="T"></typeparam>
     /// <param name="obj"></param>
     /// <returns></returns>
-    public static Option<T> Optional<T>(this T obj) =>
-        new Some<T>(obj);
+    public static Option<T> Optional<T>(this T obj)
+        => new Some<T>(obj);
 }

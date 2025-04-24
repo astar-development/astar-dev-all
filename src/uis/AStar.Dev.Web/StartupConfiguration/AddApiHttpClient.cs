@@ -18,8 +18,8 @@ public static class AddApiHttpClient
     /// <typeparam name="TApiConfiguration"></typeparam>
     public static void AddApiClient<TApiClient, TApiConfiguration>(this IServiceCollection services)
         where TApiClient : class
-        where TApiConfiguration : class, IApiConfiguration =>
-        _ = services.AddHttpClient<TApiClient>()
+        where TApiConfiguration : class, IApiConfiguration
+        => _ = services.AddHttpClient<TApiClient>()
                     .SetHandlerLifetime(TimeSpan.FromMinutes(5))
                     .AddPolicyHandler(GetRetryPolicy())
                     .AddMicrosoftIdentityUserAuthenticationHandler(

@@ -15,8 +15,8 @@ public sealed class DuplicateGroup
     /// <summary>
     ///     Gets the FileSize in a nicer, display-friendly, style
     /// </summary>
-    public string FileSizeForDisplay =>
-        FileSize / 1024 / 1024 > 0
+    public string FileSizeForDisplay
+        => FileSize / 1024 / 1024 > 0
             ? (FileSize / 1024D / 1024D).ToString("N2") + " Mb"
             : (FileSize / 1024D).ToString("N2")         + " Kb";
 
@@ -29,6 +29,6 @@ public sealed class DuplicateGroup
     ///     Returns this object in JSON format
     /// </summary>
     /// <returns>This object serialized as a JSON object</returns>
-    public override string ToString() =>
-        this.ToJson();
+    public override string ToString()
+        => this.ToJson();
 }

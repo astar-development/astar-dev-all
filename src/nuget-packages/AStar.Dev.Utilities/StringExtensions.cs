@@ -13,16 +13,16 @@ public static class StringExtensions
     /// </summary>
     /// <param name="value">The string to check for being null</param>
     /// <returns>True if the string is null, False otherwise</returns>
-    public static bool IsNull(this string? value) =>
-        value is null;
+    public static bool IsNull(this string? value)
+        => value is null;
 
     /// <summary>
     ///     The IsNotNull method, as you might expect, checks whether the string is not null
     /// </summary>
     /// <param name="value">The string to check for being not null</param>
     /// <returns>True if the string is not null, False otherwise</returns>
-    public static bool IsNotNull(this string? value) =>
-        !value.IsNull();
+    public static bool IsNotNull(this string? value)
+        => !value.IsNull();
 
     /// <summary>
     ///     The IsNullOrWhiteSpace method, as you might expect, checks whether the string is, in fact, null, empty or
@@ -30,16 +30,16 @@ public static class StringExtensions
     /// </summary>
     /// <param name="value">The string to check for being null, empty or whitespace</param>
     /// <returns>True if the string is null, empty or whitespace, False otherwise</returns>
-    public static bool IsNullOrWhiteSpace(this string? value) =>
-        string.IsNullOrWhiteSpace(value);
+    public static bool IsNullOrWhiteSpace(this string? value)
+        => string.IsNullOrWhiteSpace(value);
 
     /// <summary>
     ///     The IsNotNullOrWhiteSpace method, as you might expect, checks whether the string is not null, empty or whitespace
     /// </summary>
     /// <param name="value">The string to check for being not null, empty or whitespace</param>
     /// <returns>True if the string is not null, empty or whitespace, False otherwise</returns>
-    public static bool IsNotNullOrWhiteSpace(this string? value) =>
-        !value.IsNullOrWhiteSpace();
+    public static bool IsNotNullOrWhiteSpace(this string? value)
+        => !value.IsNullOrWhiteSpace();
 
     /// <summary>
     ///     The FromJson method, as you might expect, converts the supplied JSON to the specified object
@@ -47,8 +47,8 @@ public static class StringExtensions
     /// <typeparam name="T">The required type of the object to deserialise to</typeparam>
     /// <param name="json">The JSON representation of the object</param>
     /// <returns>A deserialised object based on the original JSON</returns>
-    public static T FromJson<T>(this string json) =>
-        JsonSerializer.Deserialize<T>(json)!;
+    public static T FromJson<T>(this string json)
+        => JsonSerializer.Deserialize<T>(json)!;
 
     /// <summary>
     ///     The FromJson method, as you might expect, converts the supplied JSON to the specified object
@@ -60,8 +60,8 @@ public static class StringExtensions
     ///     deserialisation
     /// </param>
     /// <returns>A deserialised object based on the original JSON</returns>
-    public static T FromJson<T>(this string json, JsonSerializerOptions options) =>
-        JsonSerializer.Deserialize<T>(json, options)!;
+    public static T FromJson<T>(this string json, JsonSerializerOptions options)
+        => JsonSerializer.Deserialize<T>(json, options)!;
 
     /// <summary>
     ///     The IsImage method returns whether the string represents a supported image type

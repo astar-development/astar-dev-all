@@ -8,6 +8,6 @@ public sealed class None<T> : Option<T>
     /// <summary>
     /// </summary>
     /// <returns></returns>
-    public override string ToString() =>
-        "None";
+    public override string ToString()
+        => "None";
 }

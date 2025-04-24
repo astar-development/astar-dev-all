@@ -20,14 +20,14 @@ public sealed class AStarLogger<TCategoryName>(ILogger<TCategoryName> logger, Te
 
     /// <inheritdoc />
     public IDisposable? BeginScope<TState>(TState state)
-        where TState : notnull =>
-        logger.BeginScope(state);
+        where TState : notnull
+        => logger.BeginScope(state);
 
     /// <inheritdoc />
-    public bool IsEnabled(LogLevel logLevel) =>
-        logger.IsEnabled(logLevel);
+    public bool IsEnabled(LogLevel logLevel)
+        => logger.IsEnabled(logLevel);
 
     /// <inheritdoc />
-    public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) =>
-        logger.Log(logLevel, eventId, state, exception, formatter);
+    public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
+        => logger.Log(logLevel, eventId, state, exception, formatter);
 }

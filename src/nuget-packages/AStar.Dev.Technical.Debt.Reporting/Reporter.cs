@@ -48,8 +48,8 @@ public static class Reporter
         }
     }
 
-    private static IEnumerable<MemberInfo> FindTypesWithTechDebt(IEnumerable<Assembly> assemblies) =>
-        assemblies.SelectMany(FindAllTheTypesThatHaveTechDebt);
+    private static IEnumerable<MemberInfo> FindTypesWithTechDebt(IEnumerable<Assembly> assemblies)
+        => assemblies.SelectMany(FindAllTheTypesThatHaveTechDebt);
 
     private static IEnumerable<MemberInfo> FindAllTheTypesThatHaveTechDebt(Assembly assembly)
     {
@@ -59,8 +59,8 @@ public static class Reporter
                        .Where(type => Attribute.IsDefined(type, typeof(RefactorAttribute)));
     }
 
-    private static IEnumerable<ReportLine> GenerateReportLines(IEnumerable<MemberInfo> typesWithTechDebt) =>
-        typesWithTechDebt.Select(type => new { type, techDebtAttribute = (RefactorAttribute) type.GetCustomAttributes(typeof (RefactorAttribute), false)[0], })
+    private static IEnumerable<ReportLine> GenerateReportLines(IEnumerable<MemberInfo> typesWithTechDebt)
+        => typesWithTechDebt.Select(type => new { type, techDebtAttribute = (RefactorAttribute) type.GetCustomAttributes(typeof (RefactorAttribute), false)[0], })
                          .Select(t => new ReportLine
                                       {
                                           Attribute = t.techDebtAttribute, TypeOrMemberName = t.type.ToString(), ReflectedType = t.type.ReflectedType?.Name,
@@ -96,8 +96,8 @@ public static class Reporter
         public          string?           ReflectedType    { get ; set ; }
         public          string?           Assembly         { get ; set ; }
 
-        public override string ToString() =>
-            $"Relative Benefit to fix: {Attribute.RelativeBenefitToFix:0.#} {Attribute.Description} {TypeOrMemberName} ({ReflectedType} - {Assembly}) Pain: {Attribute.PainEstimate} Effort to fix: {Attribute.HoursToResolve}";
+        public override string ToString()
+            => $"Relative Benefit to fix: {Attribute.RelativeBenefitToFix:0.#} {Attribute.Description} {TypeOrMemberName} ({ReflectedType} - {Assembly}) Pain: {Attribute.PainEstimate} Effort to fix: {Attribute.HoursToResolve}";
     }
 }
 

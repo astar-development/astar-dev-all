@@ -106,8 +106,8 @@ public sealed class RootDocument(ILogger<RootDocument> logger)
         return (httpMethod, template!);
     }
 
-    private static IEnumerable<Type> GetEndpoints(Assembly assembly) =>
-        assembly.GetTypes().Where(t => t.Namespace?.Contains("Endpoint") == true
+    private static IEnumerable<Type> GetEndpoints(Assembly assembly)
+        => assembly.GetTypes().Where(t => t.Namespace?.Contains("Endpoint") == true
                                        && !t.Name.EndsWith("Response")
                                        && !t.Name.EndsWith("Put")
                                        && !t.Name.EndsWith("Delete")

@@ -121,8 +121,8 @@ public static class ServiceCollectionExtensions
     }
 
     private static void CreateValidatedApiConfiguration(this IServiceCollection services,
-                                                        ConfigurationManager    configurationManager) =>
-        services
+                                                        ConfigurationManager    configurationManager)
+        => services
            .AddOptions<ApiConfiguration>()
            .Bind(configurationManager.GetSection(ApiConfiguration.ConfigurationSectionName))
            .ValidateDataAnnotations()

@@ -136,10 +136,10 @@ public sealed class AdminContext : DbContext
         SiteConfigurationData.Seed(context);
     }
 
-    private static ILoggerFactory CreateEmptyLoggerFactory() =>
-        LoggerFactory.Create(builder => builder.AddFilter((_, _) => false));
+    private static ILoggerFactory CreateEmptyLoggerFactory()
+        => LoggerFactory.Create(builder => builder.AddFilter((_, _) => false));
 
-    private static ILoggerFactory CreateLoggerFactory() =>
-        LoggerFactory.Create(static builder => builder
+    private static ILoggerFactory CreateLoggerFactory()
+        => LoggerFactory.Create(static builder => builder
                                 .AddFilter((category, level) => category == DbLoggerCategory.Database.Command.Name && level == LogLevel.Information));
 }

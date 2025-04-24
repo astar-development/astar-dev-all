@@ -40,8 +40,8 @@ public static class PipelineExtensions
     }
 
     private static Action<SwaggerUIOptions> SetupAction(WebApplication webApplication,
-                                                        bool           enableSwaggerDarkMode = true) =>
-        options =>
+                                                        bool           enableSwaggerDarkMode = true)
+        => options =>
         {
             IReadOnlyList<ApiVersionDescription> descriptions = webApplication.DescribeApiVersions();
 

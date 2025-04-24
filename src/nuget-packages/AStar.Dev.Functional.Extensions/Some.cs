@@ -8,8 +8,8 @@ public sealed class Some<T> : Option<T>
     /// <summary>
     /// </summary>
     /// <param name="content"></param>
-    public Some(T content) =>
-        Content = content;
+    public Some(T content)
+        => Content = content;
 
     /// <summary>
     /// </summary>
@@ -18,6 +18,6 @@ public sealed class Some<T> : Option<T>
     /// <summary>
     /// </summary>
     /// <returns></returns>
-    public override string ToString() =>
-        $"Some {Content?.ToString() ?? "<null>"}";
+    public override string ToString()
+        => $"Some {Content?.ToString() ?? "<null>"}";
 }

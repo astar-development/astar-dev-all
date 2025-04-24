@@ -16,8 +16,8 @@ public static class FluentAssignmentsExtensions
     /// <param name="value">The actual value that may be assigned</param>
     /// <returns>The value supplied to the extension method</returns>
     public static T WillBeSet<T>(this T value)
-        where T : INumber<T> =>
-        value;
+        where T : INumber<T>
+        => value;
 
     /// <summary>
     /// </summary>
@@ -25,8 +25,8 @@ public static class FluentAssignmentsExtensions
     /// <param name="value"></param>
     /// <returns></returns>
     public static T IfItIs<T>(this T value)
-        where T : INumber<T> =>
-        value;
+        where T : INumber<T>
+        => value;
 
     /// <summary>
     ///     This method will check whether the specified object is null or not
@@ -43,8 +43,8 @@ public static class FluentAssignmentsExtensions
     /// <exception cref="ArgumentNullException">
     ///     Thrown when the object is, in fact, null
     /// </exception>
-    public static T NotNull<T>(this T @object) =>
-        @object is null
+    public static T NotNull<T>(this T @object)
+        => @object is null
             ? throw new ArgumentNullException(nameof(@object))
             : @object;
 
@@ -55,8 +55,8 @@ public static class FluentAssignmentsExtensions
     /// <param name="value"></param>
     /// <returns></returns>
     public static T And<T>(this T value)
-        where T : INumber<T> =>
-        value;
+        where T : INumber<T>
+        => value;
 
     /// <summary>
     /// </summary>
@@ -66,8 +66,8 @@ public static class FluentAssignmentsExtensions
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
     public static T ItIsGreaterThan<T>(this T value, T minimum)
-        where T : INumber<T> =>
-        value <= minimum
+        where T : INumber<T>
+        => value <= minimum
             ? throw new ArgumentException($"Value {value} is not greater than {minimum}", nameof(minimum))
             : value;
 
@@ -79,8 +79,8 @@ public static class FluentAssignmentsExtensions
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
     public static T ItIsLessThan<T>(this T value, T maximum)
-        where T : INumber<T> =>
-        value >= maximum
+        where T : INumber<T>
+        => value >= maximum
             ? throw new ArgumentException($"Value {value} is not less than {maximum}", nameof(maximum))
             : value;
 
@@ -92,8 +92,8 @@ public static class FluentAssignmentsExtensions
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
     public static T ItIsGreaterThanOrEqualTo<T>(this T value, T minimum)
-        where T : INumber<T> =>
-        value < minimum
+        where T : INumber<T>
+        => value < minimum
             ? throw new ArgumentException($"Value {value} is not greater than {minimum}", nameof(minimum))
             : value;
 
@@ -105,8 +105,8 @@ public static class FluentAssignmentsExtensions
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
     public static T ItIsLessThanOrEqualTo<T>(this T value, T maximum)
-        where T : INumber<T> =>
-        value > maximum
+        where T : INumber<T>
+        => value > maximum
             ? throw new ArgumentException($"Value {value} is not less than {maximum}", nameof(maximum))
             : value;
 }

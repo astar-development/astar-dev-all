@@ -67,8 +67,8 @@ public partial class SiteConfigurationUpdate : ComponentBase
         }
     }
 
-    private Task HandleValidSubmit(EditContext arg) =>
+    private Task HandleValidSubmit(EditContext arg)
 
         //siteConfigurations.Username = repeatPassword;
-        Task.CompletedTask;
+        => Task.CompletedTask;
 }

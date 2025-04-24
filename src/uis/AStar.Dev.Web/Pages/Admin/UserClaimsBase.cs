@@ -18,8 +18,8 @@ public class UserClaimsBase : ComponentBase
     [Inject]
     public required AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
-    protected override async Task OnInitializedAsync() =>
-        await GetClaimsPrincipalData();
+    protected override async Task OnInitializedAsync()
+        => await GetClaimsPrincipalData();
 
     /// <summary>
     ///     Retrieves user claims for the signed-in user.

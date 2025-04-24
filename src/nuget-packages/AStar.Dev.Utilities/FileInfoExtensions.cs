@@ -11,6 +11,6 @@ public static class FileInfoExtensions
     /// </summary>
     /// <param name="fileInfo">The <see cref="IFileInfo" /> being extended</param>
     /// <returns><c>true</c> if the <see cref="IFileInfo" /> represents a supported image type. Otherwise, <c>false</c></returns>
-    public static bool IsImage(this IFileInfo fileInfo) =>
-        fileInfo.Name.IsImage();
+    public static bool IsImage(this IFileInfo fileInfo)
+        => fileInfo.Name.IsImage();
 }

@@ -14,8 +14,8 @@ public static class ResultExtensions
     /// <param name="result">The <see cref="IResult" /> object to return the value from</param>
     /// <typeparam name="T">The type of the value to return</typeparam>
     /// <returns>A nullable instance of the specified return type</returns>
-    public static T? GetResultValue<T>(this IResult result) =>
-        (T?)result.GetType()
+    public static T? GetResultValue<T>(this IResult result)
+        => (T?)result.GetType()
                   .GetProperty("Value", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)
                  ?.GetValue(result);
 
@@ -25,8 +25,8 @@ public static class ResultExtensions
     /// </summary>
     /// <param name="result">The <see cref="IResult" /> object to return the Status Code from</param>
     /// <returns>A nullable instance of the specified return type</returns>
-    public static int? GetResultStatusCode(this IResult result) =>
-        (int?)result.GetType()
+    public static int? GetResultStatusCode(this IResult result)
+        => (int?)result.GetType()
                     .GetProperty("StatusCode", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)
                    ?.GetValue(result);
 }

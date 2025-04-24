@@ -56,8 +56,8 @@ public sealed class FileDetail
     ///     Returns true when the file is of a supported image type
     /// </summary>
     [Refactor(1, 1, "The IsImage appears in multiple files. Refactor this issue.")]
-    public bool IsImage =>
-        FileName.EndsWith("jpg",     StringComparison.OrdinalIgnoreCase)
+    public bool IsImage
+        => FileName.EndsWith("jpg",     StringComparison.OrdinalIgnoreCase)
         || FileName.EndsWith("jpeg", StringComparison.OrdinalIgnoreCase)
         || FileName.EndsWith("bmp",  StringComparison.OrdinalIgnoreCase)
         || FileName.EndsWith("png",  StringComparison.OrdinalIgnoreCase)
@@ -71,6 +71,6 @@ public sealed class FileDetail
     /// <returns>
     ///     This object serialized as a JSON object.
     /// </returns>
-    public override string ToString() =>
-        this.ToJson();
+    public override string ToString()
+        => this.ToJson();
 }

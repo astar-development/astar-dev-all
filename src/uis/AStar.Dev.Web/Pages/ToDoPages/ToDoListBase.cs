@@ -25,8 +25,8 @@ public class ToDoListBase : ComponentBase
     [Inject]
     public required ILoggerAstar<ToDoList> Logger { get; set; }
 
-    protected override async Task OnInitializedAsync() =>
-        await GetToDoListService();
+    protected override async Task OnInitializedAsync()
+        => await GetToDoListService();
 
     [AuthorizeForScopes(ScopeKeySection = "TodoList:TodoListScope")]
     private async Task GetToDoListService()
