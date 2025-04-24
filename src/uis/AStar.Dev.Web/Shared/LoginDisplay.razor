@@ -1,0 +1,37 @@
+@using System.Security.Claims
+<AuthorizeView>
+    <Authorized>
+        Hello, @claims.Single(claim => claim.Type == "name").Value.Split(' ')[0]!
+    </Authorized>
+</AuthorizeView>
+
+@code {
+
+    [Inject]
+    public required AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+
+    protected override async Task OnInitializedAsync() =>
+        await GetClaimsPrincipalData();
+
+    private IEnumerable<Claim> claims = [];
+
+    /// <summary>
+    ///     Retrieves the user claims for the signed-in user.
+    /// </summary>
+    /// <returns></returns>
+    private async Task GetClaimsPrincipalData()
+    {
+        AuthenticationState authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+
+        ClaimsPrincipal user = authState.User;
+
+        if (user.Identity is
+            {
+                IsAuthenticated: true,
+            })
+        {
+            claims = user.Claims;
+        }
+    }
+
+}

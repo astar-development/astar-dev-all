@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+        <LangVersion>12.0</LangVersion>
+        <IsRoslynComponent>true</IsRoslynComponent>
+        <Nullable>enable</Nullable>
+        <NoWarn>NU5128</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Title>AStar Code Generators</Title>
+        <Version>0.2.0</Version>
+        <Authors>AStar Developement, Jason Barden</Authors>
+        <Company>AStar Development</Company>
+        <Copyright>AStar Development, 2025</Copyright>
+        <RunPostBuildEvent>Always</RunPostBuildEvent>
+        <PackageReadmeFile>Readme.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <IncludeSymbols>True</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/jbarden/astar-codegenerators.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/jbarden/astar-codegenerators</PackageProjectUrl>
+        <Description>
+            Contains a collection of C# Code Generators.
+            Currently, only the ToString method has been implemented, but the list will grow over time.
+        </Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="bin\Debug\net8.0\\AStar.CodeGenerators.dll"/>
+        <None Include="..\src\LICENSE">
+            <Pack>True</Pack>
+            <PackagePath>/</PackagePath>
+            <Link>LICENSE</Link>
+        </None>
+        <None Update="Readme.md">
+            <Pack>true</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Package the generator in the analyzer directory of the nuget package -->
+        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\src\nuget-packages\AStar.Dev.Technical.Debt.Reporting\AStar.Dev.Technical.Debt.Reporting.csproj"/>
+    </ItemGroup>
+
+</Project>

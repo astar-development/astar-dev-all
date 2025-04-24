@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>AStar.ico</ApplicationIcon>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+        <NoWarn>1701;1702;</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+        <NoWarn>1701;1702;</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\nuget-packages\AStar.Dev.Infrastructure.FilesDb\AStar.Dev.Infrastructure.FilesDb.csproj"/>
+    </ItemGroup>
+
+</Project>

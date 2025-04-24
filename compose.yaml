@@ -1,0 +1,95 @@
+﻿networks:
+  astar-dev:
+    driver: bridge
+    external: true
+
+services:
+  astar.dev.admin.api:
+    image: astar.dev.admin.api
+    build:
+      context: .
+      dockerfile: src/apis/AStar.Dev.Admin.Api/Dockerfile
+    ports:
+      - "4433:443"
+    environment:
+      - ASPNETCORE_URLS=https://+443;http://+80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Test1234!
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=cert.pfx
+    networks:
+      astar-dev:
+
+  astar.dev.files.api:
+    image: astar.dev.files.api
+    build:
+      context: .
+      dockerfile: src/apis/AStar.Dev.Files.Api/Dockerfile
+    ports:
+      - "4434:443"
+    environment:
+      - ASPNETCORE_URLS=https://+443;http://+80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Test1234!
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=cert.pfx
+    networks:
+      astar-dev:
+    volumes:
+      - 'C:\Users\jason\OneDrive\Pictures\:/app/Pictures/'
+
+  todolistservice:
+    image: todolistservice
+    build:
+      context: .
+      dockerfile: src/apis/Service/Dockerfile
+    ports:
+      - "4436:443"
+    environment:
+      - ASPNETCORE_URLS=https://+443;http://+80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Test1234!
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=cert.pfx
+    networks:
+      astar-dev:
+
+  astar.dev.usage.logger:
+    image: astar.dev.usage.logger
+    build:
+      context: .
+      dockerfile: src/services/AStar.Dev.Usage.Logger/Dockerfile
+    ports:
+      - "4437:443"
+    environment:
+      - ASPNETCORE_URLS=https://+443;http://+80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Test1234!
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=cert.pfx
+    networks:
+      astar-dev:
+
+  astar.dev.web:
+    image: astar.dev.web
+    build:
+      context: .
+      dockerfile: src/uis/AStar.Dev.Web/Dockerfile
+    ports:
+      - "443:443"
+    environment:
+      - ASPNETCORE_URLS=https://+443;http://+80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Test1234!
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=cert.pfx
+    networks:
+      astar-dev:
+    depends_on:
+      - astar.dev.admin.api
+      - astar.dev.files.api
+
+  astar.dev.file.classifications.api:
+    image: astar.dev.file.classifications.api
+    build:
+      context: .
+      dockerfile: src/apis/AStar.Dev.File.Classifications.Api/Dockerfile
+    ports:
+      - "4438:443"
+    environment:
+      - ASPNETCORE_URLS=https://+443;http://+80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Test1234!
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=cert.pfx
+    networks:
+      astar-dev:
+

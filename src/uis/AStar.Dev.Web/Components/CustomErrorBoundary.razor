@@ -1,0 +1,27 @@
+@inherits ErrorBoundary
+
+@if (CurrentException is null)
+{
+    @ChildContent
+}
+else if (ErrorContent is not null)
+{
+    <h1>We're sorry, but an error has occurred</h1>
+    <p>&nbsp;</p>
+    <p>Please try again and if the error persists, please feel free to contact our support team.</p>
+
+    @if (ShowRequestId)
+    {
+        <p>When contacting us, please quote the request ClassificationId below - this will help us track the issue in
+            our logs. Thank you.</p>
+        <p>
+            <strong>Request ID:</strong> <code>@RequestId</code>
+        </p>
+    }
+
+    <p>&nbsp;</p>
+    <button class="btn btn-info" @onclick="_ => Recover()">
+        Retry
+    </button>
+    @ErrorContent(CurrentException)
+}

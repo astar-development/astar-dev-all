@@ -1,0 +1,33 @@
+﻿@using AStar.Dev.Web.Components
+@using AStar.Dev.Web.Components.Layout
+@inherits LayoutComponentBase
+
+<header>
+    <TopMenu ThemeEnabledChanged="@OnThemeEnabledChanged"
+             ThemeGradientChanged="@OnThemeGradientChanged"
+             ThemeRoundedChanged="@OnThemeRoundedChanged"
+             ThemeColorChanged="@OnThemeColorChanged"
+             @bind-LayoutType="@LayoutType"/>
+</header>
+<div class="page">
+    <main>
+        <article class="content px-4">
+            <CustomErrorBoundary @ref="errorBoundary">
+                <ChildContent>
+                    @Body
+                </ChildContent>
+                <ErrorContent>
+
+                </ErrorContent>
+            </CustomErrorBoundary>
+        </article>
+    </main>
+</div>
+
+<div id="bottom" class="bottom">
+    <footer>Copyright &copy; AStar Development, @DateTime.UtcNow.Year  </footer>
+</div>
+
+@code {
+    private ErrorBoundary? errorBoundary;
+}

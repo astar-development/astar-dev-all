@@ -1,0 +1,72 @@
+﻿@page "/"
+@using AStar.Dev.Web.Components
+@using AStar.Dev.Web.Infrastructure
+
+<PageTitle>AStar Dev: Dashboard</PageTitle>
+
+<div class="pad">
+    <Heading Size="HeadingSize.Is1" Margin="Margin.Is3.FromBottom">Welcome!</Heading>
+
+    <LoadingIndicator @ref="loadingIndicator">
+        <ChildContent>
+
+            <Paragraph>
+                Welcome to the AStar Development website. This site is not real, AStar Development is not a real company - this site is just a playground for me. That said, there are a plethora of
+                NuGet packages published under the AStar Development banner and all are fully supported - all I ask is a little patience in resolving any issues reported. Thanks in advance.
+            </Paragraph>
+
+            <Paragraph>&nbsp;</Paragraph>
+
+            <Heading Size="HeadingSize.Is1" Margin="Margin.Is3.FromBottom">API Statuses</Heading>
+
+            <Paragraph>
+                Below are the results of some basic checks to the backend APIs. Over time, the checks will be extended.
+            </Paragraph>
+
+            <section class="articles">
+
+                <ApiStatusCheck @ref="adminApiStatusCheck" ApiClient="AdminApiClient" ApiName="@Constants.ApiNames.AdminApi"></ApiStatusCheck>
+
+                <ApiStatusCheck @ref="filesApiStatusCheck" ApiClient="FilesApiClient" ApiName="@Constants.ApiNames.FilesApi"></ApiStatusCheck>
+
+                <ApiStatusCheck @ref="fileClassificationsApiStatusCheck" ApiClient="ImagesApiClient" ApiName="@Constants.ApiNames.ImagesApi"></ApiStatusCheck>
+
+                <ApiStatusCheck @ref="imagesApiStatusCheck" ApiClient="ImagesApiClient" ApiName="@Constants.ApiNames.FilesClassificationsApi"></ApiStatusCheck>
+
+                <article class="center">
+                    <div class="article-wrapper center">
+                        <figure>
+                            <img src="assets/ai-generated-7997620_640.jpg" alt=""/>
+                        </figure>
+                        <div class="article-body">
+                            <div>
+                                <input type="button" id="recheck" class="btn btn-success" value="Recheck API Health Statuses" @onclick="CheckApiStatuses"/>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="center">
+                    <div class="article-wrapper center">
+                        <figure>
+                            <img src="assets/ai-generated-8668923_640.jpg" alt=""/>
+                        </figure>
+                        <div class="article-body">
+                            <h2>Thanks to...</h2>
+                            <Paragraph TextColor="TextColor.Black50">Images are sourced, free, from <a href="https://pixabay.com/" target="_blank">https://pixabay.com/</a> Thanks!
+                            </Paragraph>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+        </ChildContent>
+        <IndicatorTemplate>
+            <Animate Animation="Animations.FadeDownRight">
+                <Div>
+                    <SpinKit Type="SpinKitType.Wave" Size="100px"/>
+                </Div>
+            </Animate>
+        </IndicatorTemplate>
+    </LoadingIndicator>
+</div>

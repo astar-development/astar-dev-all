@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AStar.Dev.Infrastructure.FileClassificationsDb</name>
+    </assembly>
+    <members>
+        <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Configurations.FileDetailClassificationsConfiguration">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Configurations.FileDetailClassificationsConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileDetailClassification})">
+            <inheritdoc/>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Configurations.FileToFileClassificationMappingConfiguration">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Configurations.FileToFileClassificationMappingConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileToFileClassificationMapping})">
+            <inheritdoc/>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Constants">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:AStar.Dev.Infrastructure.FileClassificationsDb.Constants.SchemaName">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Data.FileClassificationsContext">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Data.FileClassificationsContext.#ctor">
+            <summary>
+                Alternative constructor used when creating migrations, the connection string is hard-coded
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Data.FileClassificationsContext.#ctor(AStar.Dev.Infrastructure.Data.ConnectionString,AStar.Dev.Infrastructure.Data.AStarDbContextOptions)">
+            <summary>
+                The main constructor
+            </summary>
+            <param name="connectionString">
+                An instance of
+                <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString"/>
+                used to define the Connection String in a strongly typed way
+            </param>
+            <param name="astarDbContextOptions">
+                An instance of
+                <see cref="T:AStar.Dev.Infrastructure.Data.AStarDbContextOptions"/>
+                used to control additional settings - such as Logging
+            </param>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FileClassificationsDb.Data.FileClassificationsContext.FileClassifications">
+            <summary>
+                The list of FileClassifications in the dB
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FileClassificationsDb.Data.FileClassificationsContext.FileDetailClassifications">
+            <summary>
+                The list of FileDetailClassification in the dB
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Data.FileClassificationsContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+                The overridden OnModelCreating method
+            </summary>
+            <param name="modelBuilder">
+            </param>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Data.FileClassificationsContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+                The overridden OnConfiguring method
+            </summary>
+            <param name="optionsBuilder">
+                An instance of
+                <see cref="T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder"/>
+                used to set the configuration on
+            </param>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Migrations.InitialCreation">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Migrations.InitialCreation.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Migrations.InitialCreation.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FileClassificationsDb.Migrations.InitialCreation.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileDetailClassification">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileDetailClassification.Id">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileDetailClassification.Name">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileToFileClassificationMapping">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileToFileClassificationMapping.FileId">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FileClassificationsDb.Models.FileToFileClassificationMapping.ClassificationId">
+            <summary>
+            </summary>
+        </member>
+    </members>
+</doc>

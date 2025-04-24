@@ -1,0 +1,125 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  astar.dev.admin.api:
+    build:
+      context: "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private"
+      dockerfile: "src/apis/AStar.Dev.Admin.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/AStar.Dev.Admin.Api.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net9.0/AStar.Dev.Admin.Api.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "astar.dev.admin.api:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private\\src\\apis\\AStar.Dev.Admin.Api:/app:rw"
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private:/src:rw"
+    - "C:\\Users\\jason\\AppData\\Roaming\\Microsoft\\UserSecrets:/home/app/.microsoft/usersecrets"
+    - "C:\\Users\\jason\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  astar.dev.file.classifications.api:
+    build:
+      context: "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private"
+      dockerfile: "src/apis/AStar.Dev.File.Classifications.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/AStar.Dev.File.Classifications.Api.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net9.0/AStar.Dev.File.Classifications.Api.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "astar.dev.file.classifications.api:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private\\src\\apis\\AStar.Dev.File.Classifications.Api:/app:rw"
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private:/src:rw"
+    - "C:\\Users\\jason\\AppData\\Roaming\\Microsoft\\UserSecrets:/home/app/.microsoft/usersecrets"
+    - "C:\\Users\\jason\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  astar.dev.files.api:
+    build:
+      context: "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private"
+      dockerfile: "src/apis/AStar.Dev.Files.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/AStar.Dev.Files.Api.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net9.0/AStar.Dev.Files.Api.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "astar.dev.files.api:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private\\src\\apis\\AStar.Dev.Files.Api:/app:rw"
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private:/src:rw"
+    - "C:\\Users\\jason\\AppData\\Roaming\\Microsoft\\UserSecrets:/home/app/.microsoft/usersecrets"
+    - "C:\\Users\\jason\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  astar.dev.usage.logger:
+    build:
+      context: "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private"
+      dockerfile: "src/services/AStar.Dev.Usage.Logger/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/AStar.Dev.Usage.Logger.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "astar.dev.usage.logger:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private\\src\\services\\AStar.Dev.Usage.Logger:/app:rw"
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private:/src:rw"
+    - "C:\\Users\\jason\\AppData\\Roaming\\Microsoft\\UserSecrets:/home/app/.microsoft/usersecrets"
+    - "C:\\Users\\jason\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  astar.dev.web:
+    build:
+      context: "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private"
+      dockerfile: "src/uis/AStar.Dev.Web/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/AStar.Dev.Web.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net9.0/AStar.Dev.Web.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "astar.dev.web:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private\\src\\uis\\AStar.Dev.Web:/app:rw"
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private:/src:rw"
+    - "C:\\Users\\jason\\AppData\\Roaming\\Microsoft\\UserSecrets:/home/app/.microsoft/usersecrets"
+    - "C:\\Users\\jason\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  todolistservice:
+    build:
+      context: "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private"
+      dockerfile: "src/apis/Service/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/ToDoListService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "todolistservice:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private\\src\\apis\\Service:/app:rw"
+    - "C:\\Users\\jason\\RiderProjects\\astar-dev-all-private:/src:rw"
+    - "C:\\Users\\jason\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"

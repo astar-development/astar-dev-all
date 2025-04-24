@@ -1,0 +1,115 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <img src="favicon.png" alt="AStar Development"/> AStar Development
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler"/>
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="nav flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Dashboard
+            </NavLink>
+        </div>
+        <AuthorizeView>
+            <Authorized>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="/random-image">
+                        <span class="bi bi-person-fill-nav-menu" aria-hidden="true"></span> Random Image
+                    </NavLink>
+                </div>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="/duplicate-images">
+                        <span class="bi bi-people-fill-nav-menu" aria-hidden="true"></span> Duplicate Images
+                    </NavLink>
+                </div>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="/move-files">
+                        <span class="bi bi-file-earmark-fill-nav-menu" aria-hidden="true"></span> Move Files
+                    </NavLink>
+                </div>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="/authentication-check">
+                        <span class="bi bi-shield-lock-fill-nav-menu" aria-hidden="true"></span> Authentication Check
+                    </NavLink>
+                </div>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="/todo-list">
+                        <span class="bi bi-list-check-nav-menu" aria-hidden="true"></span> ToDo List
+                    </NavLink>
+                </div>
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                Admin
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+
+                                <div class="nav-item px-3">
+                                    <NavLink class="nav-link" href="/admin/site-configuration">
+                                        <span class="bi bi-gear-fill-nav-menu" aria-hidden="true"></span> Site Config
+                                    </NavLink>
+                                </div>
+
+                                <div class="nav-item px-3">
+                                    <NavLink class="nav-link" href="/admin/scrape-directories">
+                                        <span class="bi bi-folder-fill-nav-menu" aria-hidden="true"></span> Scrape Dirs
+                                    </NavLink>
+                                </div>
+
+                                <div class="nav-item px-3">
+                                    <NavLink class="nav-link" href="/admin/search-configuration">
+                                        <span class="bi bi-gear-wide-nav-menu" aria-hidden="true"></span> Search Config
+                                    </NavLink>
+                                </div>
+
+                                <div class="nav-item px-3">
+                                    <NavLink class="nav-link" href="/models-to-ignore">
+                                        <span class="bi bi-person-fill-nav-menu" aria-hidden="true"></span> Models to
+                                        Ignore
+                                    </NavLink>
+                                </div>
+
+                                <div class="nav-item px-3">
+                                    <NavLink class="nav-link" href="/tags-to-ignore">
+                                        <span class="bi bi-bookmark-x-fill-nav-menu" aria-hidden="true"></span> Tags to
+                                        Ignore
+                                    </NavLink>
+                                </div>
+
+                                <div class="nav-item px-3">
+                                    <NavLink class="nav-link" href="/admin/add-files-to-database">
+                                        <span class="bi bi-bookmark-x-fill-nav-menu" aria-hidden="true"></span>
+                                        Add <span class="bi bi-file-earmark-fill-nav-menu" aria-hidden="true"></span> to
+                                        <span class="bi bi-database-nav-menu" aria-hidden="true"></span>
+                                    </NavLink>
+                                </div>
+
+                                <div class="nav-item px-3">
+                                    <NavLink class="nav-link" href="/admin/api-usage">
+                                        <span class="bi bi-bar-chart-fill-nav-menu" aria-hidden="true"></span> API Usage
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+
+    </nav>
+</div>
