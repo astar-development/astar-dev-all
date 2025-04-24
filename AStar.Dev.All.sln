@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		AStar.png = AStar.png
 		build-and-test.ps1 = build-and-test.ps1
 		LICENSE = LICENSE
+		.github\workflows\main_astar-dev.yml = .github\workflows\main_astar-dev.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1F8CC05D-2FCB-41EB-B50E-C9719553080B}"
