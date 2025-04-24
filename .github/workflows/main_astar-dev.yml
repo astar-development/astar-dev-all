@@ -74,4 +74,4 @@ jobs:
         with:
           app-name: 'astar-dev'
           slot-name: 'Production'
-          package: .
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
