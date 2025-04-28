@@ -24,7 +24,7 @@
         <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.23.0" />
         <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="9.0.4" />
         <PackageReference Include="Microsoft.Identity.Web" Version="3.8.3" />
-        <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.8.3" />
+        <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.8.4" />
         <PackageReference Include="Microsoft.Identity.Web.UI" Version="3.8.3" />
         <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
         <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.0.14" />
