@@ -27,7 +27,7 @@
         <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.8.3" />
         <PackageReference Include="Microsoft.Identity.Web.UI" Version="3.8.3" />
         <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
-        <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.0.14" />
+        <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.0.15" />
         <PackageReference Include="Testably.Abstractions.FileSystem.Interface" Version="9.0.0" />
     </ItemGroup>
 
